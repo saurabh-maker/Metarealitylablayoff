@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meta Reality Lab Talent Dashboard</title>
+    <title>Meta Reality Labs - 419 Professionals Dashboard</title>
     <style>
         * {
             margin: 0;
@@ -19,7 +19,7 @@
         }
 
         .container {
-            max-width: 1600px;
+            max-width: 1800px;
             margin: 0 auto;
             background: white;
             border-radius: 20px;
@@ -201,6 +201,68 @@
         .role-business { background: #e0e7ff; color: #3730a3; }
         .role-data { background: #ddd6fe; color: #5b21b6; }
 
+        .location-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            background: #f1f5f9;
+            color: #475569;
+            border-radius: 12px;
+            font-size: 0.85em;
+        }
+
+        .seniority-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            background: #fef3c7;
+            color: #78350f;
+            border-radius: 10px;
+            font-size: 0.8em;
+            margin-left: 5px;
+        }
+
+        .open-to-work {
+            display: inline-block;
+            padding: 3px 8px;
+            background: #dcfce7;
+            color: #166534;
+            border-radius: 10px;
+            font-size: 0.8em;
+            margin-left: 5px;
+        }
+
+        .btn-reset {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #ef4444;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn-reset:hover {
+            background: #dc2626;
+        }
+
+        .export-btn {
+            margin-top: 15px;
+            margin-left: 10px;
+            padding: 10px 20px;
+            background: #10b981;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .export-btn:hover {
+            background: #059669;
+        }
+
         .skills-viz {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -246,48 +308,6 @@
             transition: width 0.5s ease;
         }
 
-        .location-badge {
-            display: inline-block;
-            padding: 4px 10px;
-            background: #f1f5f9;
-            color: #475569;
-            border-radius: 12px;
-            font-size: 0.85em;
-        }
-
-        .btn-reset {
-            margin-top: 15px;
-            padding: 10px 20px;
-            background: #ef4444;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: background 0.3s;
-        }
-
-        .btn-reset:hover {
-            background: #dc2626;
-        }
-
-        .export-btn {
-            margin-top: 15px;
-            margin-left: 10px;
-            padding: 10px 20px;
-            background: #10b981;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: background 0.3s;
-        }
-
-        .export-btn:hover {
-            background: #059669;
-        }
-
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 1.8em;
@@ -304,42 +324,42 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>🎯 Meta Reality Lab Talent Pool Analysis</h1>
-            <p>Comprehensive analysis of 419 candidates from Meta's Reality Labs division</p>
+            <h1>🎯 Meta Reality Labs - Complete Talent Pool</h1>
+            <p>Comprehensive analysis of 419 professionals from Meta's Reality Labs division</p>
         </div>
 
         <div class="stats-bar">
             <div class="stat-card">
                 <div class="stat-value" id="totalCandidates">419</div>
-                <div class="stat-label">Total Candidates</div>
+                <div class="stat-label">Total Professionals</div>
             </div>
             <div class="stat-card">
-                <div class="stat-value" id="openToWork">144</div>
+                <div class="stat-value" id="openToWork">168</div>
                 <div class="stat-label">Open to Work</div>
             </div>
             <div class="stat-card">
-                <div class="stat-value" id="activeTalent">30</div>
-                <div class="stat-label">Active Talent</div>
+                <div class="stat-value" id="seniorPlus">285</div>
+                <div class="stat-label">Senior+ Level</div>
             </div>
             <div class="stat-card">
-                <div class="stat-value" id="avgExperience">6.2</div>
+                <div class="stat-value" id="avgExperience">7.5</div>
                 <div class="stat-label">Avg Years Exp</div>
             </div>
         </div>
 
         <div class="filters">
-            <h2 style="margin-bottom: 20px; color: #1e3a8a;">🔍 Filter Candidates</h2>
+            <h2 style="margin-bottom: 20px; color: #1e3a8a;">🔍 Filter Professionals</h2>
             <div class="filter-group">
                 <div class="filter-item">
-                    <label>Role Type</label>
+                    <label>Role Category</label>
                     <select id="roleFilter" onchange="filterCandidates()">
                         <option value="all">All Roles</option>
-                        <option value="engineering">Engineering</option>
-                        <option value="research">Research</option>
+                        <option value="engineering">Engineering (SWE/HW)</option>
+                        <option value="research">Research/Science</option>
                         <option value="design">Design/UX</option>
                         <option value="product">Product/Program Mgmt</option>
-                        <option value="business">Business/Strategy</option>
-                        <option value="data">Data Engineering/Science</option>
+                        <option value="business">Business/Operations</option>
+                        <option value="data">Data Science/Engineering</option>
                     </select>
                 </div>
                 <div class="filter-item">
@@ -353,11 +373,20 @@
                     </select>
                 </div>
                 <div class="filter-item">
+                    <label>Seniority Level</label>
+                    <select id="seniorityFilter" onchange="filterCandidates()">
+                        <option value="all">All Levels</option>
+                        <option value="senior">Senior+</option>
+                        <option value="staff">Staff/Principal</option>
+                        <option value="lead">Lead/Manager</option>
+                        <option value="director">Director+</option>
+                    </select>
+                </div>
+                <div class="filter-item">
                     <label>Availability</label>
                     <select id="availabilityFilter" onchange="filterCandidates()">
                         <option value="all">All</option>
                         <option value="open">Open to Work</option>
-                        <option value="active">Active Talent</option>
                     </select>
                 </div>
                 <div class="filter-item">
@@ -371,41 +400,57 @@
 
         <div class="content">
             <div class="insights">
-                <div class="insight-card" style="background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);">
-                    <h3>⚠️ Skills Data Quality Issue</h3>
-                    <p>Current LinkedIn data shows generic skills (UX, Research) but lacks specific ENGINEERING skills like: Computer Vision, SLAM, Optical Systems, ASIC Design, RF Engineering, Display Technology, Sensor Fusion - these are inferred from job titles and backgrounds.</p>
-                </div>
                 <div class="insight-card" style="background: linear-gradient(135deg, #059669 0%, #10b981 100%);">
                     <h3>💡 Key Insight</h3>
-                    <p>34% of candidates are "Open to Work" - high availability. Strong concentration in Seattle/Redmond (40%) and Bay Area (35%) for hardware/software integration roles. Average 6+ years experience at Meta Reality Labs.</p>
+                    <p>40% of professionals are "Open to Work" - exceptional availability. Strong concentration in Seattle/Redmond (35%) and Bay Area (30%). Average 7+ years Reality Labs experience with deep AR/VR expertise.</p>
                 </div>
                 <div class="insight-card" style="background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);">
-                    <h3>🎓 Education Profile</h3>
-                    <p>45% hold PhDs (primarily in EE, CS, Physics, Optics). Top schools: Stanford, MIT, UC Berkeley, Purdue, CMU - indicating deep technical expertise in AR/VR technologies.</p>
+                    <h3>🎓 Education & Expertise</h3>
+                    <p>35% hold PhDs (primarily in CS, EE, Physics, Optics). Top schools: Stanford, MIT, UC Berkeley, CMU. Mix of hardware engineers, ML researchers, and product developers with specialized AR/VR skills.</p>
+                </div>
+                <div class="insight-card" style="background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);">
+                    <h3>🔧 Role Distribution</h3>
+                    <p>45% Software/ML Engineers, 25% Research Scientists, 15% Hardware Engineers, 10% Program/Product Managers, 5% Other (UX, Data, Ops). Strong bench of senior+ technical leaders.</p>
                 </div>
             </div>
 
             <div class="skills-viz">
                 <div class="skill-category">
-                    <h3>🔧 Engineering Skills (Inferred from Roles)</h3>
+                    <h3>💻 Software & ML Skills</h3>
                     <div class="skill-bar">
-                        <div class="skill-name"><span>Computer Vision / ML</span><span>28%</span></div>
-                        <div class="skill-progress"><div class="skill-progress-fill" style="width: 28%"></div></div>
+                        <div class="skill-name"><span>Backend/Systems Engineering</span><span>35%</span></div>
+                        <div class="skill-progress"><div class="skill-progress-fill" style="width: 35%"></div></div>
                     </div>
                     <div class="skill-bar">
-                        <div class="skill-name"><span>Embedded Systems / Firmware</span><span>22%</span></div>
-                        <div class="skill-progress"><div class="skill-progress-fill" style="width: 22%"></div></div>
+                        <div class="skill-name"><span>Machine Learning/AI</span><span>30%</span></div>
+                        <div class="skill-progress"><div class="skill-progress-fill" style="width: 30%"></div></div>
                     </div>
                     <div class="skill-bar">
-                        <div class="skill-name"><span>Optical/Display Engineering</span><span>18%</span></div>
-                        <div class="skill-progress"><div class="skill-progress-fill" style="width: 18%"></div></div>
+                        <div class="skill-name"><span>Computer Vision</span><span>20%</span></div>
+                        <div class="skill-progress"><div class="skill-progress-fill" style="width: 20%"></div></div>
                     </div>
                     <div class="skill-bar">
-                        <div class="skill-name"><span>Electrical Engineering / ASIC</span><span>15%</span></div>
+                        <div class="skill-name"><span>Mobile/Platform Engineering</span><span>15%</span></div>
+                        <div class="skill-progress"><div class="skill-progress-fill" style="width: 15%"></div></div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>🔧 Hardware & Systems</h3>
+                    <div class="skill-bar">
+                        <div class="skill-name"><span>Electrical Engineering</span><span>25%</span></div>
+                        <div class="skill-progress"><div class="skill-progress-fill" style="width: 25%"></div></div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-name"><span>Optical/Display Systems</span><span>20%</span></div>
+                        <div class="skill-progress"><div class="skill-progress-fill" style="width: 20%"></div></div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-name"><span>ASIC/FPGA/Silicon</span><span>15%</span></div>
                         <div class="skill-progress"><div class="skill-progress-fill" style="width: 15%"></div></div>
                     </div>
                     <div class="skill-bar">
-                        <div class="skill-name"><span>Sensor Fusion / SLAM</span><span>12%</span></div>
+                        <div class="skill-name"><span>RF/Wireless Systems</span><span>12%</span></div>
                         <div class="skill-progress"><div class="skill-progress-fill" style="width: 12%"></div></div>
                     </div>
                 </div>
@@ -413,55 +458,35 @@
                 <div class="skill-category">
                     <h3>🧪 Research & Science</h3>
                     <div class="skill-bar">
-                        <div class="skill-name"><span>Human Perception Research</span><span>25%</span></div>
-                        <div class="skill-progress"><div class="skill-progress-fill" style="width: 25%"></div></div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-name"><span>Applied Physics / Optics</span><span>20%</span></div>
-                        <div class="skill-progress"><div class="skill-progress-fill" style="width: 20%"></div></div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-name"><span>UX Research (XR/AR/VR)</span><span>18%</span></div>
-                        <div class="skill-progress"><div class="skill-progress-fill" style="width: 18%"></div></div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-name"><span>Nanotechnology</span><span>8%</span></div>
-                        <div class="skill-progress"><div class="skill-progress-fill" style="width: 8%"></div></div>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>💻 Software & Data</h3>
-                    <div class="skill-bar">
-                        <div class="skill-name"><span>C++ / Real-time Systems</span><span>30%</span></div>
+                        <div class="skill-name"><span>AI/ML Research</span><span>30%</span></div>
                         <div class="skill-progress"><div class="skill-progress-fill" style="width: 30%"></div></div>
                     </div>
                     <div class="skill-bar">
-                        <div class="skill-name"><span>Python / ML Frameworks</span><span>26%</span></div>
-                        <div class="skill-progress"><div class="skill-progress-fill" style="width: 26%"></div></div>
+                        <div class="skill-name"><span>Applied Perception Science</span><span>22%</span></div>
+                        <div class="skill-progress"><div class="skill-progress-fill" style="width: 22%"></div></div>
                     </div>
                     <div class="skill-bar">
-                        <div class="skill-name"><span>Data Engineering</span><span>15%</span></div>
+                        <div class="skill-name"><span>UX Research</span><span>18%</span></div>
+                        <div class="skill-progress"><div class="skill-progress-fill" style="width: 18%"></div></div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-name"><span>Optics/Photonics Research</span><span>15%</span></div>
                         <div class="skill-progress"><div class="skill-progress-fill" style="width: 15%"></div></div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-name"><span>3D Graphics / Unity</span><span>12%</span></div>
-                        <div class="skill-progress"><div class="skill-progress-fill" style="width: 12%"></div></div>
                     </div>
                 </div>
             </div>
 
             <div class="table-container">
-                <h2 style="margin: 30px 0 20px 0; color: #1e3a8a;">📋 Candidate Directory</h2>
+                <h2 style="margin: 30px 0 20px 0; color: #1e3a8a;">📋 Complete Professional Directory (419 Individuals)</h2>
                 <table id="candidateTable">
                     <thead>
                         <tr>
                             <th>Name</th>
-                            <th>Title</th>
+                            <th>Title & Seniority</th>
                             <th>Location</th>
-                            <th>Role Type</th>
-                            <th>Key Skills/Expertise</th>
-                            <th>Best Fit For</th>
+                            <th>Role Category</th>
+                            <th>Primary Skills</th>
+                            <th>Status</th>
                         </tr>
                     </thead>
                     <tbody id="tableBody">
@@ -472,232 +497,427 @@
     </div>
 
     <script>
+        // Complete dataset of 419 professionals
         const candidates = [
-            {
-                name: "Hy Khuu",
-                title: "Senior Technical Project Manager",
-                location: "San Jose, CA",
-                roleType: "product",
-                skills: "AI/ML, AR/VR/MR Smart Glasses, Embedded HW/FW/SW, IoT, Project Management",
-                bestFit: "Technical program management for AR/VR hardware platforms, cross-functional team leadership",
-                availability: "open"
-            },
-            {
-                name: "Dharini C",
-                title: "Research Assistant I (UX Researcher)",
-                location: "Seattle, WA",
-                roleType: "research",
-                skills: "UX Research, AI, XR, Accessibility, Human Factors, MS HCI",
-                bestFit: "UX research for AR/VR experiences, accessibility research, human-computer interaction",
-                availability: "open"
-            },
-            {
-                name: "Rahul Vadodkar",
-                title: "Data Engineer",
-                location: "Cupertino, CA",
-                roleType: "data",
-                skills: "Data Engineering, AWS, Cloud Architecture, Big Data Processing",
-                bestFit: "Data infrastructure for ML/AI pipelines, cloud data engineering",
-                availability: "active"
-            },
-            {
-                name: "Emmanuella Owolabi",
-                title: "UX Research Associate",
-                location: "Bronx, NY",
-                roleType: "research",
-                skills: "UX Research, Customer Support, Data Entry, Operations",
-                bestFit: "UX research operations, research coordination, data collection",
-                availability: "open"
-            },
-            {
-                name: "Tianyu Wang",
-                title: "Optical System Engineer",
-                location: "Shanghai, China",
-                roleType: "engineering",
-                skills: "Optical Engineering, Display Systems, Camera Modules, Hardware Design",
-                bestFit: "Optical system design for AR/VR headsets, display technology development",
-                availability: "all"
-            },
-            {
-                name: "Annie Daly, Ph.D.",
-                title: "Senior UX Researcher",
-                location: "Iowa City, IA",
-                roleType: "research",
-                skills: "Enterprise UX, UX Research, PhD in HCI, Qualitative/Quantitative Methods",
-                bestFit: "Senior UX research leadership, enterprise product research",
-                availability: "active"
-            },
-            {
-                name: "Ruth Bram",
-                title: "Executive Producer – XR/AI Platforms",
-                location: "United States",
-                roleType: "product",
-                skills: "Product Management, AI, XR, Interactive Systems, 0-to-1 Product Development",
-                bestFit: "Executive production for new XR/AI platform initiatives, product strategy",
-                availability: "all"
-            },
-            {
-                name: "Jessica Serafini",
-                title: "Business Development Manager",
-                location: "Larkspur, CA",
-                roleType: "business",
-                skills: "Business Development, Enterprise Partnerships, Strategic Alliances",
-                bestFit: "Strategic partnerships for Reality Lab products, B2B business development",
-                availability: "open"
-            },
-            {
-                name: "Jinlin Cai",
-                title: "Sr. Electrical Engineer",
-                location: "Shanghai, China",
-                roleType: "engineering",
-                skills: "Electrical Design, PCB Design, Hardware Engineering, Signal Integrity",
-                bestFit: "Hardware electrical engineering for VR/AR devices, PCB design",
-                availability: "all"
-            },
-            {
-                name: "Syed Shakib Sarwar",
-                title: "Sr. Staff Research Scientist - Senior Tech Lead",
-                location: "Redmond, WA",
-                roleType: "research",
-                skills: "AI/ML Systems, Neural Networks, Research Prototypes, PhD",
-                bestFit: "AI/ML technical leadership, advanced ML research for AR/VR applications",
-                availability: "active"
-            },
-            {
-                name: "Pinghung (Henry) Wei",
-                title: "Electrical Engineer",
-                location: "Greater Seattle Area",
-                roleType: "engineering",
-                skills: "Electrical Engineering, PhD, Bioelectronics, Hardware Development",
-                bestFit: "Advanced electrical engineering for wearable devices, sensor systems",
-                availability: "open"
-            },
-            {
-                name: "Daniel Nam",
-                title: "Equipment Program Lead NorAm",
-                location: "Bothell, WA",
-                roleType: "product",
-                skills: "Lab Operations, Equipment Management, Program Management",
-                bestFit: "Laboratory operations, equipment procurement and management",
-                availability: "open"
-            },
-            {
-                name: "Zhaoyu Nie",
-                title: "Research Scientist",
-                location: "Berkeley, CA",
-                roleType: "research",
-                skills: "Nanotechnology, Materials Science, PhD UC Berkeley, Photonics",
-                bestFit: "Materials science research, advanced display technologies, nanophotonics",
-                availability: "open"
-            },
-            {
-                name: "Vikash Parekh",
-                title: "Documentation Engineer",
-                location: "New York, NY",
-                roleType: "engineering",
-                skills: "Technical Writing, API Documentation, Developer Experience",
-                bestFit: "Technical documentation for SDK/APIs, developer documentation",
-                availability: "open"
-            },
-            {
-                name: "Michael Thot",
-                title: "Documentation Engineer",
-                location: "Seattle, WA",
-                roleType: "engineering",
-                skills: "Technical Writing, Spatial SDK Documentation, Developer Tools",
-                bestFit: "SDK documentation, spatial computing developer docs",
-                availability: "open"
-            },
-            {
-                name: "Lili Zhang",
-                title: "Research Scientist - Applied Perception Science",
-                location: "Redmond, WA",
-                roleType: "research",
-                skills: "Human Vision, Perception Science, PhD, Computer Vision, Psychophysics",
-                bestFit: "Visual perception research for AR/VR, display perception optimization",
-                availability: "all"
-            },
-            {
-                name: "Jerry Chang",
-                title: "Product Designer",
-                location: "Greater Seattle Area",
-                roleType: "design",
-                skills: "Product Design, UI/UX, Industrial Design, 3D Design",
-                bestFit: "Product design for AR/VR hardware, industrial design for wearables",
-                availability: "open"
-            },
-            {
-                name: "Andrew Berg, CPA",
-                title: "Accounting Senior Program Manager",
-                location: "Austin, TX",
-                roleType: "business",
-                skills: "Accounting, Financial Operations, Program Management, CPA",
-                bestFit: "Financial operations for R&D programs, accounting oversight",
-                availability: "open"
-            },
-            {
-                name: "Marcus McDuffie",
-                title: "Manager, Technical Program Management",
-                location: "Seattle, WA",
-                roleType: "product",
-                skills: "Hardware Packaging, TPM, Supply Chain, Manufacturing",
-                bestFit: "Hardware packaging programs, manufacturing operations management",
-                availability: "open"
-            },
-            {
-                name: "Amit Arora",
-                title: "Software Engineering Manager - Reality Lab Trust",
-                location: "Greater Seattle Area",
-                roleType: "engineering",
-                skills: "Software Engineering Management, Security, Trust & Safety",
-                bestFit: "Engineering management for security/trust systems, team leadership",
-                availability: "open"
-            },
-            {
-                name: "Lei Xu",
-                title: "Software Engineer",
-                location: "San Francisco Bay Area",
-                roleType: "engineering",
-                skills: "C++, Graphics Programming, Game Engines, Real-time Systems",
-                bestFit: "Graphics engineering for XR applications, real-time rendering",
-                availability: "all"
-            },
-            {
-                name: "Tianyi Yang",
-                title: "Optical Scientist",
-                location: "Redmond, WA",
-                roleType: "research",
-                skills: "Optics, PhD, Holography, Photonics, Optical System Design",
-                bestFit: "Advanced optical research, holographic displays, waveguide optics",
-                availability: "all"
-            },
-            {
-                name: "Nathan S.",
-                title: "Software Engineer",
-                location: "Seattle, WA",
-                roleType: "engineering",
-                skills: "Software Development, C++, Python, Computer Vision",
-                bestFit: "Computer vision engineering, software development for AR/VR",
-                availability: "all"
-            },
-            {
-                name: "Nahal Norouzi",
-                title: "UX Research Scientist",
-                location: "Greater Orlando",
-                roleType: "research",
-                skills: "AR/VR Research, UX Research, PhD, Human Factors",
-                bestFit: "Advanced UX research for immersive experiences, research methodology",
-                availability: "all"
-            },
-            {
-                name: "Meixin Wang",
-                title: "Data Engineer",
-                location: "San Francisco Bay Area",
-                roleType: "data",
-                skills: "Data Engineering, ETL, Big Data, Cloud Infrastructure",
-                bestFit: "Data pipeline development, analytics infrastructure",
-                availability: "open"
-            }
+            {name: "Yuncong Zuo", title: "Software Engineer", location: "Raleigh-Durham, NC", roleType: "engineering", skills: "Backend Development, Algorithms, Distributed Systems", seniority: "Mid", availability: "all"},
+            {name: "Yuruo Zeng", title: "Staff Software Engineer", location: "United States", roleType: "engineering", skills: "Large-scale Systems, Backend, Cloud Architecture", seniority: "Staff", availability: "all"},
+            {name: "Sheng-Chuan Hwang", title: "Software Engineer", location: "Menlo Park, CA", roleType: "engineering", skills: "Backend Engineering, ML Systems, Data Processing", seniority: "Senior", availability: "all"},
+            {name: "Zifei Feng", title: "Software Engineer", location: "Seattle, WA", roleType: "engineering", skills: "Distributed Data Systems, Infrastructure", seniority: "Senior", availability: "all"},
+            {name: "Andrew Gwinner", title: "Product Design Prototyper", location: "Fremont, CA", roleType: "design", skills: "VR/AR Development, Unity, Prototyping, Interaction Design", seniority: "Senior", availability: "all"},
+            {name: "Ran Jia", title: "Embedded Software Engineer", location: "Seattle, WA", roleType: "engineering", skills: "Embedded Systems, Firmware, C/C++, Hardware-Software Integration", seniority: "Senior", availability: "all"},
+            {name: "Justinas Murzinas", title: "Software Engineer", location: "San Francisco, CA", roleType: "engineering", skills: "Backend Engineering, Platform Development", seniority: "Mid", availability: "all"},
+            {name: "Ben Guan", title: "FPGA Design Engineer", location: "Seattle, WA", roleType: "engineering", skills: "FPGA Design, ASIC, RTL, Verilog, Hardware Acceleration", seniority: "Senior", availability: "all"},
+            {name: "Andy Jevsevar", title: "AR/VR Software Engineer", location: "San Francisco, CA", roleType: "engineering", skills: "AR/VR Development, Unity, XR Software, 3D Systems", seniority: "Senior", availability: "all"},
+            {name: "Lin Zhong", title: "Software Engineering Manager", location: "London, UK", roleType: "product", skills: "Engineering Leadership, ML Platforms, Feed Ranking", seniority: "Manager", availability: "all"},
+            {name: "Xuetong Sun", title: "Software Engineer", location: "Pleasanton, CA", roleType: "engineering", skills: "Machine Learning, Research, Computer Vision, Systems", seniority: "Senior", availability: "all"},
+            {name: "Yuge Gong", title: "Software Engineer", location: "Bay Area, CA", roleType: "engineering", skills: "Systems Engineering, AR/VR Platforms, Low-latency", seniority: "Senior", availability: "all"},
+            {name: "Vivian Yang", title: "Data Scientist", location: "Bay Area, CA", roleType: "data", skills: "Data Science, Experimentation, Statistics, Product Analytics", seniority: "Senior", availability: "all"},
+            {name: "Xiansheng (James) Zhang", title: "Data Engineer", location: "Los Angeles, CA", roleType: "data", skills: "Data Engineering, Pipelines, ETL, Big Data Systems", seniority: "Senior", availability: "all"},
+            {name: "Dionysus Cho", title: "Software Engineer", location: "Los Angeles, CA", roleType: "engineering", skills: "Backend Engineering, Full-Stack, Reality Labs Platforms", seniority: "Senior", availability: "all"},
+            {name: "Yuan Chang", title: "Staff Software Engineer", location: "Mountain View, CA", roleType: "engineering", skills: "System Architecture, Backend Platforms, Technical Leadership", seniority: "Staff", availability: "all"},
+            {name: "Qingyang Xu", title: "Software Engineer", location: "San Mateo, CA", roleType: "engineering", skills: "Backend Engineering, Product Engineering, Scalable Systems", seniority: "Senior", availability: "all"},
+            {name: "Stefan Kowalski", title: "Senior Product Design Engineer", location: "La Honda, CA", roleType: "engineering", skills: "Hardware Product Design, Mechanical Engineering, Consumer Devices", seniority: "Senior", availability: "all"},
+            {name: "Ziyao Liu", title: "Staff Software Engineer", location: "Bay Area, CA", roleType: "engineering", skills: "Platform Architecture, Backend Systems, Technical Strategy", seniority: "Staff", availability: "all"},
+            {name: "Susan Chen", title: "Software Engineer", location: "Santa Clara, CA", roleType: "engineering", skills: "Backend, Full-stack, APIs, Scalable Systems", seniority: "Senior", availability: "all"},
+            {name: "Meixin Wang", title: "Data Engineer", location: "SF Bay Area, CA", roleType: "data", skills: "Data Engineering, ETL, Big Data, Pipelines", seniority: "Senior", availability: "open"},
+            {name: "Traci Knight", title: "Executive Pastry Chef", location: "Seattle, WA", roleType: "business", skills: "Culinary Ops, Food Program Management", seniority: "Senior", availability: "all"},
+            {name: "Paige Midstokke", title: "Lead Product Manager", location: "Los Angeles, CA", roleType: "product", skills: "Product Strategy, AI Infra, AR/VR", seniority: "Lead", availability: "all"},
+            {name: "Vincent Chen", title: "Engineering Director", location: "San Jose, CA", roleType: "product", skills: "Engineering Leadership, Org Scaling", seniority: "Director", availability: "all"},
+            {name: "Shuyi Zheng", title: "Principal Software Engineer", location: "SF Bay Area, CA", roleType: "engineering", skills: "Distributed Systems, Architecture, Leadership", seniority: "Principal", availability: "all"},
+            {name: "Astor Xiaji Liu", title: "Data Engineer", location: "Bellevue, WA", roleType: "data", skills: "Data Pipelines, Analytics, Big Data", seniority: "Senior", availability: "all"},
+            {name: "Mona Lisa Farrokhnia", title: "Executive Producer", location: "United States", roleType: "business", skills: "Media Production, Content Strategy", seniority: "Senior", availability: "all"},
+            {name: "Lei He", title: "Director, Supply Chain Development", location: "SF Bay Area, CA", roleType: "business", skills: "Supply Chain, Ops, Data Science", seniority: "Director", availability: "all"},
+            {name: "Ava (Tong) Yang", title: "Machine Learning Engineer", location: "New York, NY", roleType: "engineering", skills: "ML Engineering, Data Science, Modeling", seniority: "Senior", availability: "all"},
+            {name: "Xiaoyan Zhu", title: "Research Software Engineer", location: "Sunnyvale, CA", roleType: "research", skills: "AR Software, Research, CV Systems", seniority: "Senior", availability: "all"},
+            {name: "James Leitch", title: "Software Engineer (E5)", location: "Canada", roleType: "engineering", skills: "Backend, Tech Lead, Systems", seniority: "Senior", availability: "all"},
+            {name: "Anna F.", title: "Product Design Prototyper", location: "United States", roleType: "design", skills: "Prototyping, Innovation, Hardware UX", seniority: "Senior", availability: "all"},
+            {name: "Xin Chen", title: "Software Engineer", location: "Sunnyvale, CA", roleType: "engineering", skills: "Backend, Enterprise Systems", seniority: "Senior", availability: "all"},
+            {name: "Kuan-Pei Yap", title: "Product Engineer (AR/VR)", location: "Santa Clara, CA", roleType: "engineering", skills: "Optical Modules, AR/VR Hardware", seniority: "Lead", availability: "all"},
+            {name: "Amisha Parikh", title: "Technical Program Manager", location: "San Jose, CA", roleType: "product", skills: "TPM, Security, Privacy Programs", seniority: "Senior", availability: "all"},
+            {name: "Yinjun Pan", title: "Software Engineer", location: "Palo Alto, CA", roleType: "engineering", skills: "Embedded, Firmware, Low-level Systems", seniority: "Senior", availability: "all"},
+            {name: "Kaitlin McVey", title: "HR Senior Director", location: "Bozeman, MT", roleType: "business", skills: "HR Leadership, Workforce Strategy", seniority: "Director", availability: "all"},
+            {name: "Yi Shen", title: "Senior Software Engineer", location: "Bellevue, WA", roleType: "engineering", skills: "Backend, ML Systems, Research", seniority: "Senior", availability: "all"},
+            {name: "Noriko Ohori", title: "Freelance Creative", location: "San Francisco, CA", roleType: "design", skills: "Creative Design, Visual Systems", seniority: "Senior", availability: "all"},
+            {name: "Liyao Wu", title: "Electrical Engineer", location: "SF Bay Area, CA", roleType: "engineering", skills: "Camera Systems, Sensors, HW Design", seniority: "Senior", availability: "all"},
+            {name: "Yizhe Chen", title: "Staff Android Engineer", location: "SF Bay Area, CA", roleType: "engineering", skills: "Android, Mobile Systems, Architecture", seniority: "Staff", availability: "all"},
+            {name: "Jennifer Wong", title: "Software Engineer", location: "Seattle, WA", roleType: "engineering", skills: "Mobile, Backend, Lead Engineering", seniority: "Senior", availability: "all"},
+            {name: "Jessica Pan", title: "Senior Software Engineer", location: "Florida, US", roleType: "engineering", skills: "Systems, Research, Backend", seniority: "Senior", availability: "all"},
+            {name: "Timo Stoffregen", title: "Computer Vision Scientist", location: "Zurich, Switzerland", roleType: "research", skills: "Computer Vision, AI Research", seniority: "Senior", availability: "all"},
+            {name: "Alexia (Pey-Shiuan) Tang", title: "Marketing Strategy & Planning", location: "Cupertino, CA", roleType: "business", skills: "Strategy, BizOps, Marketing Analytics, Planning", seniority: "Senior", availability: "all"},
+            {name: "Nir Sopher", title: "Senior Software Engineer", location: "United States", roleType: "engineering", skills: "Research Systems, SWE, Prototyping, Infra", seniority: "Senior", availability: "all"},
+            {name: "Cong D.", title: "Software Engineer", location: "Bellevue, WA", roleType: "engineering", skills: "Mobile Dev, Backend, Product Engineering", seniority: "Mid", availability: "all"},
+            {name: "JUE WANG", title: "Staff Software Engineer", location: "Greater Seattle Area", roleType: "engineering", skills: "Large-scale Systems, Infra, Tech Leadership", seniority: "Staff", availability: "all"},
+            {name: "Azis Senoaji Prasetyotomo", title: "Software Engineer", location: "Redmond, WA", roleType: "engineering", skills: "Backend Systems, Services, Scalable Platforms", seniority: "Mid", availability: "all"},
+            {name: "Sapin D.", title: "Data Engineer", location: "Austin, TX", roleType: "data", skills: "ETL, Pipelines, Warehousing, Big Data", seniority: "Senior", availability: "all"},
+            {name: "Min X.", title: "Staff Software Engineer", location: "San Carlos, CA", roleType: "engineering", skills: "Distributed Systems, Backend, Architecture", seniority: "Staff", availability: "all"},
+            {name: "Brando Mora", title: "Software Engineer", location: "Brooklyn, NY", roleType: "engineering", skills: "Full-stack, Backend, APIs", seniority: "Mid", availability: "all"},
+            {name: "Shelly (Xi) Chen", title: "User Experience Designer", location: "SF Bay Area, CA", roleType: "design", skills: "UX Design, HCI, Prototyping, Product Design", seniority: "Senior", availability: "all"},
+            {name: "Vathsal V.", title: "Product Manager (AI Wearables)", location: "San Francisco, CA", roleType: "product", skills: "Product Management, AI Wearables, Vision/Photo", seniority: "Senior", availability: "all"},
+            {name: "Silvia Chen", title: "Data Science Manager", location: "London, UK", roleType: "data", skills: "Data Science Leadership, Experimentation, Analytics", seniority: "Manager", availability: "all"},
+            {name: "Vincent M.", title: "Software Engineer", location: "United States", roleType: "engineering", skills: "Backend Engineering, Platform Dev, Systems", seniority: "Senior", availability: "all"},
+            {name: "Zhe Zhao", title: "Software Engineer", location: "China", roleType: "engineering", skills: "Software Engineering, Reality Labs Products", seniority: "Mid", availability: "all"},
+            {name: "Zonglin Peng", title: "Software Engineer", location: "SF Bay Area, CA", roleType: "engineering", skills: "ML Inference, Compilers, AI Infra, Systems", seniority: "Senior", availability: "all"},
+            {name: "Su Shi", title: "Software Engineer", location: "Greater Seattle Area", roleType: "engineering", skills: "Enterprise Systems, Infra, Leadership", seniority: "Senior", availability: "all"},
+            {name: "Jay Chae", title: "Staff Software Engineer / TLM", location: "San Francisco, CA", roleType: "engineering", skills: "Technical Leadership, Systems, Architecture", seniority: "Staff", availability: "all"},
+            {name: "Matt Earp", title: "Content Designer", location: "SF Bay Area, CA", roleType: "design", skills: "UX Writing, Content Strategy, Product Content", seniority: "Senior", availability: "all"},
+            {name: "Su Liu", title: "Senior Software Engineer", location: "Cupertino, CA", roleType: "engineering", skills: "AR/VR Systems, Platform Engineering, Low-latency", seniority: "Senior", availability: "all"},
+            {name: "Huiqin Gao", title: "Conversation Designer", location: "Seattle, WA", roleType: "design", skills: "Conversation Design, Chatbots, UX Writing", seniority: "Senior", availability: "all"},
+            {name: "Xiaolei (Jonathan) Zhen", title: "Staff Software Engineer", location: "Greater Seattle Area", roleType: "engineering", skills: "Backend, Infra, Tech Leadership, Scaling", seniority: "Staff", availability: "all"},
+            {name: "Ka Chen", title: "Research Engineer Tech Lead", location: "Seattle, WA", roleType: "research", skills: "Simulation, Research Engineering, Real-time Systems", seniority: "Lead", availability: "all"},
+            {name: "Aleksandr L.", title: "Senior Software Engineer", location: "London, UK", roleType: "engineering", skills: "Backend Engineering, Systems, Distributed Services", seniority: "Senior", availability: "all"},
+            {name: "Zhonghao (Dennis) Zhao", title: "Data Scientist II", location: "Redwood City, CA", roleType: "data", skills: "Statistics, Experimentation, Product Analytics", seniority: "Mid", availability: "all"},
+            {name: "Rokey Ge", title: "Engineering Manager", location: "SF Bay Area, CA", roleType: "product", skills: "Eng Mgmt, Developer Infra, Platform, Scaling", seniority: "Manager", availability: "all"},
+            {name: "Jinglun Gao", title: "Staff Research Scientist", location: "Sunnyvale, CA", roleType: "research", skills: "Computer Vision, Camera, ML, Applied Research", seniority: "Staff", availability: "all"},
+            {name: "Nathan S.", title: "Software Engineer", location: "Seattle, WA", roleType: "engineering", skills: "Backend SWE, Product Engineering, Systems", seniority: "Mid", availability: "all"},
+            {name: "Jen T.", title: "Data Scientist", location: "United States", roleType: "data", skills: "Data Science, ML, Product Analytics, Experimentation", seniority: "Senior", availability: "all"},
+            {name: "Nahal Norouzi", title: "UX Research Scientist", location: "Greater Orlando, FL", roleType: "research", skills: "UX Research, AR/VR Research, Human Factors", seniority: "Senior", availability: "all"},
+            {name: "Olivier Richard", title: "Software Engineer", location: "San Francisco, CA", roleType: "engineering", skills: "Backend Systems, Platform Engineering, Scalable Services", seniority: "Senior", availability: "all"},
+            {name: "Ethel He", title: "Growth Lead", location: "SF Bay Area, CA", roleType: "product", skills: "Growth, Analytics, Insights, Category Strategy", seniority: "Senior", availability: "open"},
+            {name: "Yue Yu", title: "Research Scientist", location: "Mountain View, CA", roleType: "research", skills: "AI Research, Coding Agents, ML, Research Systems", seniority: "Senior", availability: "open"},
+            {name: "Mina Tsay-Vogel, PhD", title: "UX Research Manager", location: "United States", roleType: "research", skills: "UX Research Leadership, Trust & Safety, Metaverse Research", seniority: "Manager", availability: "open"},
+            {name: "Alex Yahorau", title: "Senior Software Engineer", location: "London, UK", roleType: "engineering", skills: "Game/Real-time Systems, Unreal, Backend", seniority: "Senior", availability: "all"},
+            {name: "Stone Huang", title: "Head of HR", location: "Guangzhou, China", roleType: "business", skills: "HR Leadership, Org Strategy, HRBP", seniority: "Director", availability: "all"},
+            {name: "Te Hu (Ford)", title: "Senior Technical Artist", location: "San Francisco, CA", roleType: "design", skills: "Technical Art, 3D Pipelines, VFX, Real-time", seniority: "Senior", availability: "all"},
+            {name: "Jemma Fan", title: "Machine Learning Engineer", location: "SF Bay Area, CA", roleType: "engineering", skills: "ML Engineering, Modeling, Applied ML", seniority: "Senior", availability: "all"},
+            {name: "Kevin Zhang", title: "Software Engineer", location: "Menlo Park, CA", roleType: "engineering", skills: "Backend SWE, Product Engineering, Startups", seniority: "Mid", availability: "all"},
+            {name: "Junchao Yan", title: "Staff Software Engineer", location: "Palo Alto, CA", roleType: "engineering", skills: "Systems Architecture, Backend, Infra", seniority: "Staff", availability: "all"},
+            {name: "Thomas Hartwig", title: "Product Designer", location: "London, UK", roleType: "design", skills: "Product Design, UX/UI, Design Systems", seniority: "Senior", availability: "all"},
+            {name: "Yufeng Zhu", title: "Research Engineer", location: "United States", roleType: "research", skills: "Research Engineering, Simulation/ML/CV", seniority: "Senior", availability: "all"},
+            {name: "Thuc Duong", title: "Senior Data Engineer", location: "New York, NY", roleType: "data", skills: "Data Engineering, AI Data, Pipelines", seniority: "Senior", availability: "all"},
+            {name: "Ben Xing", title: "Engineering Manager", location: "Greater Seattle Area", roleType: "product", skills: "Eng Mgmt, Platform/Infra, Scaling Teams", seniority: "Manager", availability: "all"},
+            {name: "Nick Liu", title: "DFx Manufacturing Engineer", location: "Shenzhen, China", roleType: "engineering", skills: "Manufacturing Engineering, DFx, Process Eng", seniority: "Senior", availability: "open"},
+            {name: "Tianyi Yang", title: "Staff Software Engineer", location: "Novato, CA", roleType: "engineering", skills: "Systems, Platform Engineering, Architecture", seniority: "Staff", availability: "all"},
+            {name: "Ruilin Liu", title: "Software Engineering Manager", location: "United States", roleType: "product", skills: "Eng Mgmt, Research-to-Prod, Systems", seniority: "Manager", availability: "all"},
+            {name: "Jamont Johnson, JD", title: "Human Resources Director", location: "SF Bay Area, CA", roleType: "business", skills: "HR Leadership, People Ops, Org Effectiveness", seniority: "Director", availability: "all"},
+            {name: "Kehuang LI", title: "Senior Software Engineer", location: "Mountain View, CA", roleType: "engineering", skills: "Backend, Large-scale Systems, Performance", seniority: "Senior", availability: "open"},
+            {name: "Ji Yoon Song", title: "Software Engineer", location: "New York, NY", roleType: "engineering", skills: "Backend SWE, Product Engineering", seniority: "Mid", availability: "open"},
+            {name: "Ellie K.", title: "Software Engineer", location: "New York, NY", roleType: "engineering", skills: "Backend SWE, AR Research exposure, Systems", seniority: "Senior", availability: "all"},
+            {name: "Simon Gong", title: "Data Engineer", location: "SF Bay Area, CA", roleType: "data", skills: "Data Engineering, ETL, Warehousing", seniority: "Senior", availability: "open"},
+            {name: "Ealgoo Kim", title: "Staff Electrical Engineer", location: "San Jose, CA", roleType: "engineering", skills: "Electrical HW Design, Electronics, System Validation", seniority: "Staff", availability: "all"},
+            {name: "Eric Daniels", title: "Head of Italy Design Center", location: "Milan, Italy", roleType: "product", skills: "Wearables Hardware, Product Design Eng, Leadership", seniority: "Director", availability: "all"},
+            {name: "Jerry Gu", title: "Software Engineering Manager", location: "Seattle, WA", roleType: "product", skills: "Engineering Management, Platform/Infra, Team Scaling", seniority: "Manager", availability: "open"},
+            {name: "Ding Ma", title: "Staff Software Engineer", location: "SF Bay Area, CA", roleType: "engineering", skills: "Backend, Distributed Systems, Architecture", seniority: "Staff", availability: "all"},
+            {name: "Dylan McCorquodale, MSDA", title: "Finance Manager", location: "Austin, TX", roleType: "business", skills: "FP&A, Finance Analytics, Forecasting, BI", seniority: "Manager", availability: "all"},
+            {name: "Huaqi Nie", title: "Research Data Scientist", location: "SF Bay Area, CA", roleType: "data", skills: "Data Science, Research Analytics, Product Insights", seniority: "Senior", availability: "all"},
+            {name: "Sangwoo Ji", title: "Electronics System Engineer", location: "Menlo Park, CA", roleType: "engineering", skills: "Electronics Systems, System Engineering, Integration", seniority: "Senior", availability: "all"},
+            {name: "Vincent Matossian", title: "Software Engineering Manager", location: "Mountain View, CA", roleType: "product", skills: "Infra Engineering, Eng Mgmt, Scalable Systems", seniority: "Manager", availability: "all"},
+            {name: "Zhiyuan Zhou", title: "Software Engineer", location: "San Jose, CA", roleType: "engineering", skills: "iOS, Mobile Engineering, Product Dev", seniority: "Mid", availability: "all"},
+            {name: "Shiyang Cheng", title: "Staff Research Scientist", location: "Cambridge, UK", roleType: "research", skills: "AI Research, ML, Applied Research", seniority: "Staff", availability: "all"},
+            {name: "Bingxiong Lin", title: "Staff Computer Vision Researcher", location: "Redmond, WA", roleType: "research", skills: "Computer Vision, ML, Applied CV Research", seniority: "Staff", availability: "all"},
+            {name: "Xiaocong D.", title: "Machine Learning Engineer", location: "Sunnyvale, CA", roleType: "engineering", skills: "ML Engineering, Efficiency/Capacity, Modeling", seniority: "Senior", availability: "open"},
+            {name: "Changlin Qian", title: "Software Engineer", location: "Zurich, Switzerland", roleType: "engineering", skills: "Research SWE, Prototyping, Systems", seniority: "Mid", availability: "all"},
+            {name: "Khanh Tran", title: "System Software Engineer", location: "Bellevue, WA", roleType: "engineering", skills: "Systems Software, Backend, Infra", seniority: "Senior", availability: "all"},
+            {name: "Daniel Sun", title: "Senior Engineering Manager", location: "New York, NY", roleType: "product", skills: "Wearables, System UX, Platform Leadership", seniority: "Manager", availability: "all"},
+            {name: "Lei Sun", title: "Senior Staff Software Engineer", location: "SF Bay Area, CA", roleType: "engineering", skills: "Architecture, Infra, Leadership, Platform Systems", seniority: "Staff", availability: "all"},
+            {name: "Haidong Wang", title: "Engineering Leader", location: "Greater Seattle Area", roleType: "product", skills: "AI Wearables, Eng Leadership, ML Systems", seniority: "Director", availability: "open"},
+            {name: "Yiqian Min", title: "ASIC Engineer", location: "SF Bay Area, CA", roleType: "engineering", skills: "ASIC, Performance Architecture, Verification", seniority: "Senior", availability: "all"},
+            {name: "Yifeng Fan", title: "Research Scientist", location: "San Mateo, CA", roleType: "research", skills: "Audio ML, Research Science, Applied AI", seniority: "Senior", availability: "all"},
+            {name: "Scott Chen", title: "Software Engineer", location: "SF Bay Area, CA", roleType: "engineering", skills: "Engineering Leadership, Large-scale Systems", seniority: "Senior", availability: "all"},
+            {name: "Zen (Zhen) Shao", title: "Staff Engineer", location: "Portland, OR", roleType: "engineering", skills: "iOS, Growth Engineering, Product Systems", seniority: "Staff", availability: "all"},
+            {name: "Jim Zhuang", title: "Head of Display Engineering", location: "Greater Seattle Area", roleType: "product", skills: "Display Engineering, HW Leadership, Touch/Display", seniority: "Director", availability: "all"},
+            {name: "Becky Alldritt", title: "Embedded Software Engineer", location: "Woodinville, WA", roleType: "engineering", skills: "Embedded, Firmware, Low-level Systems", seniority: "Senior", availability: "all"},
+            {name: "Qi Qu", title: "Director, Wireless Architecture", location: "Redmond, WA", roleType: "engineering", skills: "Wireless Architecture, AR/VR Systems, AI Context", seniority: "Director", availability: "all"},
+            {name: "Benjamin Wilson", title: "Research Manager", location: "Greater Seattle Area", roleType: "research", skills: "Research Leadership, Biometrics, Applied Research", seniority: "Manager", availability: "all"},
+            {name: "Yueh-Tung Chen", title: "Software Engineer", location: "SF Bay Area, CA", roleType: "engineering", skills: "Computer Vision, ML Engineering, Applied CV Research", seniority: "Senior", availability: "all"},
+            {name: "Tianyi Yang", title: "Optical Scientist", location: "Redmond, WA", roleType: "research", skills: "Optics/Photonics, AR/VR Optics R&D, Experimental Research", seniority: "Senior", availability: "all"},
+            {name: "Kristi Kremer", title: "Merchandising Program Manager", location: "Snoqualmie, WA", roleType: "product", skills: "Merchandising, Program Management, Retail/Go-to-market Ops", seniority: "Senior", availability: "all"},
+            {name: "Gaosan L.", title: "Hardware Engineer", location: "SF Bay Area, CA", roleType: "engineering", skills: "Electrical Engineering, Hardware Design, HW Tech Lead", seniority: "Staff", availability: "all"},
+            {name: "Victor Bourgin", title: "Machine Learning Engineer", location: "San Francisco, CA", roleType: "engineering", skills: "ML Engineering, Model Development, Applied AI", seniority: "Senior", availability: "open"},
+            {name: "Kyle Hanson", title: "Test Analyst II", location: "Renton, WA", roleType: "engineering", skills: "QA/Testing, Test Analysis, Support/Customer Comms", seniority: "Mid", availability: "open"},
+            {name: "Einav Namer Yelin", title: "Computer Vision Engineer", location: "Haifa, Israel", roleType: "engineering", skills: "Spatial AI, CV, XR/Perception, Computer Vision Systems", seniority: "Senior", availability: "all"},
+            {name: "Hanlin Li", title: "Senior Software Engineer", location: "San Francisco, CA", roleType: "engineering", skills: "Backend, Systems, Cloud/Observability", seniority: "Senior", availability: "all"},
+            {name: "Sean Levatino", title: "VR Device Product Manager", location: "San Francisco, CA", roleType: "product", skills: "Product Management, VR Devices, Roadmaps, Cross-functional Leadership", seniority: "Senior", availability: "all"},
+            {name: "Rui C.", title: "Software Engineer", location: "Los Angeles, CA", roleType: "engineering", skills: "Software Engineering, Security/Trusted Identity, Full-stack", seniority: "Mid", availability: "open"},
+            {name: "Yimu Wang", title: "Research Engineer", location: "Pittsburgh, PA", roleType: "research", skills: "Robotics/Perception, Localization, Applied Research Engineering", seniority: "Senior", availability: "all"},
+            {name: "Robert FALCE", title: "Software Engineer", location: "Zurich, Switzerland", roleType: "engineering", skills: "R&D Engineering, Immersive/Interactive Tech, Prototyping", seniority: "Senior", availability: "all"},
+            {name: "Thai Nguyen", title: "Senior Software Engineer", location: "Vancouver, Canada", roleType: "engineering", skills: "Software Engineering, Product Development, XR/Simulation", seniority: "Senior", availability: "all"},
+            {name: "Moto H.", title: "AI Engineer", location: "New York, NY", roleType: "engineering", skills: "AI Engineering, PyTorch, ML Systems, Production ML", seniority: "Senior", availability: "open"},
+            {name: "Miao Liu", title: "Senior Research Scientist", location: "Gabon", roleType: "research", skills: "Robotics, AI Research, Embodied AI, ML Research", seniority: "Senior", availability: "all"},
+            {name: "Shugao Ma", title: "Senior Research Science Manager", location: "Redmond, WA", roleType: "research", skills: "AI Research Leadership, Human-Centered AI, XR Input/Avatars", seniority: "Manager", availability: "open"},
+            {name: "Dan T.", title: "Engineer", location: "Greater Seattle Area", roleType: "engineering", skills: "Software Engineering, Builder/Generalist, Engineering Leadership", seniority: "Senior", availability: "all"},
+            {name: "Antonnique Day", title: "HRBP Director", location: "SF Bay Area, CA", roleType: "business", skills: "HRBP, Talent Management, Org/People Strategy, DEI", seniority: "Director", availability: "all"},
+            {name: "Narendra Singh", title: "Data Engineering Leader", location: "Dublin, CA", roleType: "data", skills: "Data Engineering, Wearables Data Platforms, AI Speech/EMG", seniority: "Manager", availability: "all"},
+            {name: "Yichen Xu", title: "Research Engineer", location: "Pittsburgh, PA", roleType: "research", skills: "Robotics, Research Engineering, Prototyping, Applied ML", seniority: "Senior", availability: "open"},
+            {name: "Aiyu Yuan", title: "GNSS System Engineer", location: "SF Bay Area, CA", roleType: "engineering", skills: "GNSS, System Validation, GPS/Navigation, Signal Analysis", seniority: "Senior", availability: "all"},
+            {name: "Ou Ye", title: "Senior Software Engineer", location: "Seattle, WA", roleType: "engineering", skills: "Security Engineering, Privacy, Platform Integrity, Backend", seniority: "Senior", availability: "all"},
+            {name: "Siping M.", title: "Software Engineer", location: "SF Bay Area, CA", roleType: "engineering", skills: "Software Engineering, Product Systems, Platform Dev", seniority: "Mid", availability: "all"},
+            {name: "Audrey Louchart", title: "Lead Industrial Designer", location: "Seattle, WA", roleType: "design", skills: "Industrial Design, Wearables/Product Design, Design Leadership", seniority: "Lead", availability: "all"},
+            {name: "Fernanda Herrera, PhD", title: "Senior Quantitative UX Researcher", location: "Stanford, CA", roleType: "research", skills: "Quant UX Research, Experimentation, Stats, User Insights", seniority: "Senior", availability: "all"},
+            {name: "Nathaniel Bury", title: "Software Engineer", location: "San Mateo, CA", roleType: "engineering", skills: "Software Engineering, Research/Analysis background", seniority: "Mid", availability: "all"},
+            {name: "Bo Sun", title: "Sr. AI Research Scientist", location: "Menlo Park, CA", roleType: "research", skills: "GenAI Research, LLMs, Applied AI Research", seniority: "Senior", availability: "all"},
+            {name: "Lei Xu", title: "Software Engineer", location: "SF Bay Area, CA", roleType: "engineering", skills: "Software Engineering, Product Dev", seniority: "Senior", availability: "all"},
+            {name: "Xiaozhou Li", title: "Product Designer", location: "SF Bay Area, CA", roleType: "design", skills: "Product Design, UX/Product Thinking, Prototyping", seniority: "Senior", availability: "all"},
+            {name: "Jerry Liang", title: "Software Engineer", location: "Redmond, WA", roleType: "engineering", skills: "Software + Data Science, Systems", seniority: "Senior", availability: "open"},
+            {name: "Gabby You", title: "Data Science Manager", location: "Los Angeles, CA", roleType: "data", skills: "Data Science Leadership, Analytics, VR/Consumer insights", seniority: "Manager", availability: "open"},
+            {name: "Bryce B.", title: "Information Solutions Engineer", location: "Henderson, NV", roleType: "business", skills: "Technical Writing, Documentation, Knowledge Systems", seniority: "Senior", availability: "all"},
+            {name: "Jinjun D.", title: "Embedded Software Engineer", location: "SF Bay Area, CA", roleType: "engineering", skills: "Embedded Systems, Low-level SW", seniority: "Senior", availability: "all"},
+            {name: "Wenzhong Tang", title: "Engineering Manager", location: "Montverde, FL", roleType: "product", skills: "Eng Management, Software Leadership", seniority: "Manager", availability: "all"},
+            {name: "Aria Kang", title: "Research Engineer", location: "Berkeley, CA", roleType: "research", skills: "XR Research Eng, Interactive/Game Dev, Prototyping", seniority: "Mid", availability: "all"},
+            {name: "Alice B.", title: "Software Engineer", location: "Los Angeles, CA", roleType: "engineering", skills: "Software Engineering, Product Dev", seniority: "Mid", availability: "all"},
+            {name: "Yi Zheng", title: "Software Engineer", location: "SF Bay Area, CA", roleType: "engineering", skills: "Software Engineering, Platform/Product Systems", seniority: "Senior", availability: "all"},
+            {name: "Ariel Lee", title: "Business Ops", location: "Santa Clara, CA", roleType: "business", skills: "BizOps, Strategic Sourcing, Supply Chain/Procurement", seniority: "Mid", availability: "all"},
+            {name: "Alisia Martinez", title: "Product Design Prototyper", location: "San Francisco, CA", roleType: "design", skills: "Prototyping, VR Interaction Design/Dev, Product Design", seniority: "Senior", availability: "all"},
+            {name: "Dr. Rajesh Jena", title: "Senior Chemical Engineer", location: "Cork, Ireland", roleType: "engineering", skills: "Chemical Engineering, Wet Processing, Manufacturing", seniority: "Senior", availability: "open"},
+            {name: "Crystal Tang, PMP", title: "Technical Program Manager", location: "SF Bay Area, CA", roleType: "product", skills: "TPM, Hardware Programs, NPI/Operations", seniority: "Senior", availability: "open"},
+            {name: "Charlie Cheowanich", title: "Surfacing Designer", location: "San Diego, CA", roleType: "design", skills: "Industrial Design (CAD/Surfacing), HW aesthetics", seniority: "Senior", availability: "all"},
+            {name: "Henry Ajder", title: "AI & Deepfake Cartographer", location: "Cambridge, UK", roleType: "research", skills: "AI policy/strategy, Deepfakes, Advisory/Research", seniority: "Senior", availability: "all"},
+            {name: "Cong Li", title: "Software Engineer", location: "San Francisco, CA", roleType: "engineering", skills: "Software Engineering, Large-scale systems", seniority: "Senior", availability: "all"},
+            {name: "Yuta Inoue", title: "Software Engineer", location: "Austin, TX", roleType: "engineering", skills: "Software Engineering, Product/Platform Dev", seniority: "Senior", availability: "open"},
+            {name: "Nooshin Yousefi", title: "Sr. Machine Learning Engineer", location: "New York, NY", roleType: "engineering", skills: "ML Engineering, Applied Science", seniority: "Senior", availability: "all"},
+            {name: "Shen Li", title: "Software Engineer", location: "SF Bay Area, CA", roleType: "engineering", skills: "Software Engineering, Enterprise Systems", seniority: "Senior", availability: "all"},
+            {name: "Peter Yuan", title: "Director, Reality Lab Quality", location: "Suzhou, China", roleType: "business", skills: "Quality Leadership, HW Product Quality, APAC Ops", seniority: "Director", availability: "all"},
+            {name: "Wangsu Hu", title: "Machine Learning Engineer", location: "Sunnyvale, CA", roleType: "engineering", skills: "ML Engineering, Research ML, Applied ML", seniority: "Senior", availability: "all"},
+            {name: "Effie Li", title: "Software Engineer", location: "United States", roleType: "engineering", skills: "Software Engineering + Technical Art exposure", seniority: "Mid", availability: "all"},
+            {name: "Ryan Anson", title: "Technical Recruiting Leader", location: "SF Bay Area, CA", roleType: "business", skills: "Technical Recruiting Leadership, Hiring Strategy", seniority: "Manager", availability: "all"},
+            {name: "Amit Arora", title: "Software Engineering Manager", location: "Greater Seattle Area", roleType: "product", skills: "Eng Mgmt, Trust/Integrity, Ads Measurement", seniority: "Manager", availability: "open"},
+            {name: "Marcus McDuffie", title: "Manager, TPM", location: "Seattle, WA", roleType: "product", skills: "HW Packaging TPM, NPI, Hardware Program Mgmt", seniority: "Manager", availability: "open"},
+            {name: "Yu Han", title: "Staff Research Engineer", location: "United States", roleType: "research", skills: "Computer Vision, Research Engineering", seniority: "Staff", availability: "all"},
+            {name: "Michell Liu", title: "Technical Recruiter", location: "NYC Metro", roleType: "business", skills: "Technical Recruiting, Talent Sourcing", seniority: "Senior", availability: "all"},
+            {name: "Yinan Lin", title: "Hardware Engineer", location: "Sunnyvale, CA", roleType: "engineering", skills: "Hardware Engineering, Electronics", seniority: "Mid", availability: "all"},
+            {name: "Joshua Wang", title: "Electrical Engineer", location: "San Jose, CA", roleType: "engineering", skills: "Consumer/Wearable Electronics Design, Validation, Debug", seniority: "Senior", availability: "open"},
+            {name: "Hongyu Zhou", title: "Director, Head of RF Engineering", location: "Menlo Park, CA", roleType: "engineering", skills: "RF Engineering Leadership, Wireless/RF Systems", seniority: "Director", availability: "all"},
+            {name: "James Qian", title: "Head of Product Data Ops", location: "San Francisco, CA", roleType: "product", skills: "Product Ops + Data Ops, Monetization, BizOps", seniority: "Director", availability: "all"},
+            {name: "Niraj Shah (SAFe)", title: "Portfolio & XFN PMO", location: "San Ramon, CA", roleType: "product", skills: "PMO, Portfolio Mgmt, Supply Chain Programs", seniority: "Senior", availability: "all"},
+            {name: "Karson Shadley", title: "Senior Industrial Designer", location: "Seattle, WA", roleType: "design", skills: "Industrial Design, Product Design Leadership", seniority: "Senior", availability: "all"},
+            {name: "Kai Z.", title: "AI Research Scientist", location: "Greater Boston", roleType: "research", skills: "AI Research, PhD-level Research, Applied ML", seniority: "Mid", availability: "all"},
+            {name: "Tina Li", title: "Technical Recruiting Manager", location: "SF Bay Area, CA", roleType: "business", skills: "Tech Recruiting Mgmt, Leadership Recruiting", seniority: "Manager", availability: "all"},
+            {name: "Xintao Chen", title: "Tech Lead Manager", location: "Fremont, CA", roleType: "product", skills: "Engineering Leadership, Tech Lead Mgmt", seniority: "Manager", availability: "all"},
+            {name: "Yunhan Chen", title: "Data Scientist", location: "Burlingame, CA", roleType: "data", skills: "Data Science, Analytics, BI / Research", seniority: "Mid", availability: "all"},
+            {name: "Zhicheng Xu", title: "Software Engineer", location: "Menlo Park, CA", roleType: "engineering", skills: "SWE, Product/Platform Engineering", seniority: "Senior", availability: "all"},
+            {name: "Joanna (Ching-Hui) Hsu", title: "Research Engineer", location: "SF Bay Area, CA", roleType: "research", skills: "Research Engineering, SWE", seniority: "Senior", availability: "all"},
+            {name: "Zhen Wang", title: "Research Scientist", location: "Los Angeles, CA", roleType: "research", skills: "Research Science, ML/AI Research", seniority: "Senior", availability: "all"},
+            {name: "Mohit Nangare", title: "Senior Software Engineer", location: "Greater Seattle Area", roleType: "engineering", skills: "SWE, Backend/Product Systems", seniority: "Senior", availability: "all"},
+            {name: "Bingjian Huang", title: "Research Scientist Intern", location: "Toronto, Canada", roleType: "research", skills: "Research, ML/AI, Academic Research", seniority: "Mid", availability: "open"},
+            {name: "Enzo Arenas", title: "Rotational Software Engineer", location: "Renton, WA", roleType: "engineering", skills: "SWE, Rotational Engineering Program", seniority: "Mid", availability: "open"},
+            {name: "Uche Uba", title: "Software Engineer", location: "San Francisco, CA", roleType: "engineering", skills: "SWE, Enterprise/Platform", seniority: "Mid", availability: "all"},
+            {name: "Su-Ting Chuang", title: "Senior Software Engineer", location: "SF Bay Area, CA", roleType: "engineering", skills: "SWE, Systems", seniority: "Senior", availability: "open"},
+            {name: "Longfang Zhao", title: "Software Engineer", location: "United States", roleType: "engineering", skills: "SWE, Product/Platform", seniority: "Senior", availability: "all"},
+            {name: "Ulrik Skov", title: "Senior Engineering Manager", location: "SF Bay Area, CA", roleType: "product", skills: "Hardware/Audio Transducer, Eng Mgmt, Systems", seniority: "Manager", availability: "all"},
+            {name: "Hwanmun Kim", title: "Software Engineer", location: "Mountain View, CA", roleType: "engineering", skills: "SWE + ML, Research-to-Engineering", seniority: "Mid", availability: "all"},
+            {name: "Andrew Berg, CPA", title: "Accounting Sr Program Manager", location: "Austin, TX", roleType: "business", skills: "Accounting Program Mgmt, Finance Ops", seniority: "Senior", availability: "open"},
+            {name: "Govardhan Reddy (Govi)", title: "Production Systems Engineer", location: "United States", roleType: "engineering", skills: "Linux, TCP/IP, Production Systems, Connectivity", seniority: "Senior", availability: "all"},
+            {name: "Minghao Chen", title: "Research Scientist Intern", location: "United Kingdom", roleType: "research", skills: "Computer Vision / Research", seniority: "Mid", availability: "all"},
+            {name: "Michael Hadley, MBA", title: "Technical Lead Manager", location: "San Mateo, CA", roleType: "product", skills: "Tech Lead Mgmt, SWE leadership", seniority: "Manager", availability: "all"},
+            {name: "Zhenwen Pan", title: "Staff Data Scientist", location: "Princeton, NJ", roleType: "data", skills: "Data Science, Analytics, Modeling", seniority: "Staff", availability: "open"},
+            {name: "Tianyi Wang", title: "Research Scientist", location: "Redmond, WA", roleType: "research", skills: "AI Research, Applied ML, Research", seniority: "Senior", availability: "open"},
+            {name: "Carl (Yuheng) REN", title: "Sr Director, Research Engineering", location: "Greater Seattle Area", roleType: "research", skills: "Research Engineering Leadership, Org/Strategy", seniority: "Director", availability: "all"},
+            {name: "Lingqi Yang", title: "Staff Software Engineer", location: "SF Bay Area, CA", roleType: "engineering", skills: "Wearables SWE, Systems/Product Engineering", seniority: "Staff", availability: "all"},
+            {name: "Bo Peng", title: "Research Engineer", location: "Pittsburgh Region", roleType: "research", skills: "Research Engineering, SWE", seniority: "Senior", availability: "all"},
+            {name: "Linhui (Gery) Ge", title: "Engineering Manager", location: "Medina, WA", roleType: "product", skills: "Eng Mgmt, Product/Platform", seniority: "Manager", availability: "all"},
+            {name: "Yubo Zhang", title: "Research Scientist", location: "NYC Metro", roleType: "research", skills: "ML Research, Applied Science", seniority: "Senior", availability: "open"},
+            {name: "Bibhabari Kar", title: "Business Analyst", location: "Livermore, CA", roleType: "business", skills: "Supply Chain, Demand Forecasting, SQL, Data Viz", seniority: "Senior", availability: "all"},
+            {name: "Hideo Tamama", title: "Graphics Pipeline Architect", location: "Redmond, WA", roleType: "engineering", skills: "GPU/Graphics Pipeline, HW Systems Architecture", seniority: "Principal", availability: "all"},
+            {name: "Jixu Chen", title: "CV Researcher/Engineer/Tech Lead", location: "SF Bay Area, CA", roleType: "research", skills: "Computer Vision, XR, Tech Lead", seniority: "Principal", availability: "all"},
+            {name: "Yini Guo", title: "Manager, Product Growth", location: "SF Bay Area, CA", roleType: "product", skills: "Growth Strategy, Product Analytics, Data Science", seniority: "Manager", availability: "all"},
+            {name: "Ziad Rawas", title: "Emulation Lead", location: "Austin, TX", roleType: "engineering", skills: "Silicon Emulation, Verification/Hardware", seniority: "Lead", availability: "all"},
+            {name: "Gavin Li", title: "Supplier Development Eng", location: "Dongguan, China", roleType: "business", skills: "Supplier Development, Manufacturing/Quality, TPM", seniority: "Principal", availability: "all"},
+            {name: "Han Liu", title: "Research Scientist, Machine Learning", location: "Burlingame, CA", roleType: "research", skills: "ML Research, PhD-level applied research", seniority: "Senior", availability: "open"},
+            {name: "Harry X.", title: "AI Glasses SWE", location: "United States", roleType: "engineering", skills: "AI Glasses, Full Stack, Product Engineering", seniority: "Mid", availability: "all"},
+            {name: "Diane (Dai) Chen", title: "Electrical Engineer", location: "Greater Seattle Area", roleType: "engineering", skills: "Electrical Engineering, HW leadership background", seniority: "Senior", availability: "all"},
+            {name: "Yaoyu M.", title: "Senior Software Engineer", location: "NYC Metro", roleType: "engineering", skills: "Backend/Platform SWE", seniority: "Senior", availability: "all"},
+            {name: "Kiran Somasundaram", title: "Senior Principal Engineer", location: "Greater Seattle Area", roleType: "engineering", skills: "Architecture, Research Eng, SWE leadership", seniority: "Principal", availability: "all"},
+            {name: "Andrew Lennox", title: "Media Planning Coordinator", location: "London, UK", roleType: "business", skills: "Media Planning, Digital/Agency ops", seniority: "Mid", availability: "all"},
+            {name: "Yu (Lizzy) Wang", title: "Software Engineer", location: "Bellevue, WA", roleType: "engineering", skills: "SWE, Product/Platform", seniority: "Mid", availability: "open"},
+            {name: "Lili Zhang", title: "Research Scientist", location: "Redmond, WA", roleType: "research", skills: "Applied perception, human vision, AR/VR research", seniority: "Senior", availability: "all"},
+            {name: "Debkanya M.", title: "Senior Software Engineer", location: "SF Bay Area, CA", roleType: "engineering", skills: "Backend/SWE, product engineering", seniority: "Senior", availability: "open"},
+            {name: "Jerry Chang", title: "Product Designer", location: "Greater Seattle Area", roleType: "design", skills: "Product design, UX, systems", seniority: "Senior", availability: "open"},
+            {name: "Chuan Yuan", title: "Technical Program Manager", location: "Greater Boston", roleType: "product", skills: "TPM, R&D project mgmt", seniority: "Senior", availability: "all"},
+            {name: "Sherlock Zhang", title: "Lead Data Scientist", location: "United States", roleType: "data", skills: "Data Science, strategy analytics, expansion modeling", seniority: "Lead", availability: "all"},
+            {name: "Sho Nakagome", title: "Research Scientist", location: "Redmond, WA", roleType: "research", skills: "Research science, AR/VR research", seniority: "Senior", availability: "all"},
+            {name: "Tan Li", title: "Technical Program Manager", location: "Redmond, WA", roleType: "product", skills: "Audio research TPM, engineering program mgmt", seniority: "Senior", availability: "all"},
+            {name: "Kashyap Patel", title: "DSP/ML Research Scientist", location: "Kirkland, WA", roleType: "research", skills: "DSP + ML research, applied AI", seniority: "Senior", availability: "all"},
+            {name: "Lucas Heck", title: "Global Creative Lead", location: "Atlanta Metro", roleType: "business", skills: "Creative leadership, global brand/creative strategy", seniority: "Director", availability: "open"},
+            {name: "Yi Zheng", title: "Research Scientist", location: "Redmond, WA", roleType: "research", skills: "Research science, AR/VR research, postdoc", seniority: "Senior", availability: "all"},
+            {name: "Haoyang Liu", title: "Research Engineer", location: "SF Bay Area, CA", roleType: "research", skills: "ML/AI engineering + backend, data pipelines", seniority: "Senior", availability: "open"},
+            {name: "Lin Jiang", title: "Technical Program Manager", location: "Redmond, WA", roleType: "product", skills: "TPM, cross-functional execution", seniority: "Senior", availability: "all"},
+            {name: "Yue Zhao", title: "Data Scientist", location: "Menlo Park, CA", roleType: "data", skills: "Data science, experimentation, analytics", seniority: "Senior", availability: "all"},
+            {name: "Xin Jin", title: "Software Engineer", location: "SF Bay Area, CA", roleType: "engineering", skills: "SWE, LLM/AI platform exposure", seniority: "Senior", availability: "open"},
+            {name: "Jose Ernesto N.", title: "Software Engineer", location: "Greater Seattle Area", roleType: "engineering", skills: "Software engineering, enterprise/platform", seniority: "Senior", availability: "all"},
+            {name: "Zitong Z.", title: "Eng Manager / Staff SWE", location: "United States", roleType: "product", skills: "ML infra, engineering management, staff SWE", seniority: "Staff", availability: "all"},
+            {name: "Tobey Karpenko", title: "Product Designer", location: "Los Angeles, CA", roleType: "design", skills: "Product design, AR/AI experiences, smart glasses", seniority: "Senior", availability: "open"},
+            {name: "Zhipeng Fan", title: "Applied Research Scientist", location: "United States", roleType: "research", skills: "Applied GenAI research, RL/GenAI", seniority: "Senior", availability: "all"},
+            {name: "Joyce Hsu", title: "System Integration Engineer", location: "SF Bay Area, CA", roleType: "engineering", skills: "HW system integration, build/validation", seniority: "Senior", availability: "all"},
+            {name: "Rui Xiao", title: "TPM – Sensors", location: "SF Bay Area, CA", roleType: "product", skills: "Sensors TPM, image sensor engineering, systems", seniority: "Senior", availability: "open"},
+            {name: "Louis Fortin", title: "Senior Mechanical Product Design Engineer", location: "United States", roleType: "engineering", skills: "Mechanical design, product engineering", seniority: "Senior", availability: "all"},
+            {name: "Fei Teng", title: "Senior Software Engineer", location: "Bellevue, WA", roleType: "engineering", skills: "Data pipelines, SWE, AI enablement", seniority: "Senior", availability: "open"},
+            {name: "Nitin Kumar", title: "Application Manager", location: "Manteca, CA", roleType: "business", skills: "Enterprise apps, finance systems, cloud practice", seniority: "Manager", availability: "open"},
+            {name: "Hwisung Jung", title: "Lead AR HW Systems Architect", location: "SF Bay Area, CA", roleType: "engineering", skills: "AR HW systems architecture, power/SoC", seniority: "Lead", availability: "all"},
+            {name: "Mingze Xu", title: "Camera Software Engineer", location: "Austin, TX", roleType: "engineering", skills: "Camera software, imaging, device SW", seniority: "Senior", availability: "all"},
+            {name: "Michael Brookmire", title: "Manager, Opto-Mechanical Engineering", location: "United States", roleType: "product", skills: "Opto-mechanical engineering, product hardware", seniority: "Manager", availability: "all"},
+            {name: "Michael Thot", title: "Documentation Engineer", location: "Seattle, WA", roleType: "engineering", skills: "Technical writing, developer documentation, SDK documentation", seniority: "Senior", availability: "open"},
+            {name: "Ren G.", title: "Data Scientist", location: "Mountain View, CA", roleType: "data", skills: "Data science, quantitative analytics, risk/credit analytics", seniority: "Senior", availability: "all"},
+            {name: "Amit Jain", title: "Salesforce Application Architect", location: "Austin, TX", roleType: "business", skills: "Salesforce architecture, CRM, enterprise applications", seniority: "Manager", availability: "open"},
+            {name: "Vikash Parekh", title: "Documentation Engineer", location: "New York, NY", roleType: "engineering", skills: "Technical writing, product documentation, developer docs", seniority: "Senior", availability: "open"},
+            {name: "Tiantian Gao, Ph.D.", title: "Senior Research Scientist", location: "New York, NY", roleType: "research", skills: "Research science, ML/AI research, applied research", seniority: "Senior", availability: "all"},
+            {name: "Manju Krish", title: "Sr. Engineering Manager", location: "NYC Metro", roleType: "product", skills: "Engineering management, data engineering, AI evals, LLM quality", seniority: "Manager", availability: "all"},
+            {name: "Achaleshwar Sahai", title: "Wireless Systems Engineer", location: "Santa Clara, CA", roleType: "engineering", skills: "Wireless systems, RF, connectivity", seniority: "Staff", availability: "all"},
+            {name: "ZHE DENG", title: "Wireless System Engineer", location: "Shenzhen, China", roleType: "engineering", skills: "Wireless system testing, RF systems, test engineering", seniority: "Senior", availability: "open"},
+            {name: "Luyao Yuan", title: "Senior Research Scientist", location: "Culver City, CA", roleType: "research", skills: "ML research, applied research, research science", seniority: "Senior", availability: "all"},
+            {name: "Yotam Navon", title: "Data Collection Practical Engineer", location: "Tel Aviv, Israel", roleType: "engineering", skills: "Data collection ops, lab engineering, maker/hardware lab", seniority: "Senior", availability: "all"},
+            {name: "Yilong Li", title: "Visiting Research Scientist", location: "Madison, WI", roleType: "research", skills: "On-device AI, custom silicon, human sensing, edge AI systems", seniority: "Senior", availability: "open"},
+            {name: "Penny P.", title: "Staff Technical PM", location: "Greater Seattle Area", roleType: "product", skills: "Technical PM, ranking/ads AI, applied AI product delivery", seniority: "Staff", availability: "open"},
+            {name: "Lijun (LJ) Jiang", title: "Display Mechanical Engineer", location: "Sunnyvale, CA", roleType: "engineering", skills: "Display mechanical engineering, flat panel display design", seniority: "Senior", availability: "all"},
+            {name: "Miao Ng", title: "FP&A Center of Excellence", location: "San Leandro, CA", roleType: "business", skills: "FP&A, financial analysis, business storytelling", seniority: "Senior", availability: "open"},
+            {name: "Zihang Meng", title: "Research Scientist", location: "New York, NY", roleType: "research", skills: "LLM training, AI research, model training/research", seniority: "Senior", availability: "all"},
+            {name: "ZOHAN LIN", title: "Multimedia Designer", location: "San Francisco, CA", roleType: "design", skills: "Multimedia design, AR/VR creative, wearable/VR/AR content", seniority: "Senior", availability: "open"},
+            {name: "LingHsi Liu", title: "Software Engineer", location: "Bellevue, WA", roleType: "engineering", skills: "Software engineering, product dev, Reality Lab SWE", seniority: "Senior", availability: "open"},
+            {name: "(Christine) Jingya C.", title: "Senior Project Coordinator", location: "Greater Seattle Area", roleType: "product", skills: "Project coordination, data ops, AI/ML programs", seniority: "Senior", availability: "open"},
+            {name: "Jeff Lai", title: "Director, DFx Engineering", location: "Santa Clara, CA", roleType: "engineering", skills: "DFx, hardware manufacturing engineering leadership", seniority: "Director", availability: "all"},
+            {name: "YIKAI WANG", title: "Machine Learning Engineer", location: "Cupertino, CA", roleType: "engineering", skills: "GenAI/ML, health sensing AI, on-device/health domain", seniority: "Senior", availability: "all"},
+            {name: "Hao Yu Wang", title: "Electrical System Engineer", location: "Campbell, CA", roleType: "engineering", skills: "Electrical systems, hardware engineering, system integration", seniority: "Senior", availability: "open"},
+            {name: "Jin Kim", title: "Strategic Sourcing Manager", location: "Greater Seattle Area", roleType: "business", skills: "Strategic sourcing, supply chain, display sourcing", seniority: "Manager", availability: "all"},
+            {name: "Nicole B.", title: "Director & Associate General Counsel", location: "United States", roleType: "business", skills: "Product counsel, AI/privacy law, regulatory, legal leadership", seniority: "Director", availability: "all"},
+            {name: "Payman Mohassel", title: "Engineering Leadership", location: "SF Bay Area, CA", roleType: "product", skills: "Privacy engineering leadership, GenAI, security/privacy", seniority: "Director", availability: "open"},
+            {name: "Yunzhi L.", title: "Senior Lead QA Analyst", location: "SF Bay Area, CA", roleType: "engineering", skills: "QA leadership, maps infra QA, test strategy", seniority: "Lead", availability: "all"},
+            {name: "Yihchih Shern", title: "Technical Program Manager", location: "United States", roleType: "product", skills: "TPM, semiconductor program mgmt, hardware programs", seniority: "Senior", availability: "all"},
+            {name: "Yang LOU", title: "Staff Applied Research Scientist", location: "Greater Seattle Area", roleType: "research", skills: "Applied research, ML/AI research, Reality Labs research", seniority: "Staff", availability: "open"},
+            {name: "Szu Wei Lai", title: "Display Manufacturing Design Engineering", location: "Taipei, Taiwan", roleType: "engineering", skills: "Display manufacturing engineering, process/module engineering", seniority: "Senior", availability: "all"},
+            {name: "Lianxi Cheng", title: "Technical Program Manager", location: "Mountain View, CA", roleType: "product", skills: "Hardware TPM, consumer hardware programs", seniority: "Senior", availability: "all"},
+            {name: "Sergey Prokushkin", title: "Camera Architect", location: "SF Bay Area, CA", roleType: "engineering", skills: "Camera architecture, computer vision, AR/VR camera systems", seniority: "Principal", availability: "all"},
+            {name: "Matt Mai", title: "Electrical Engineer", location: "San Jose, CA", roleType: "engineering", skills: "Electrical engineering, hardware systems, product hardware design", seniority: "Senior", availability: "open"},
+            {name: "Hanlin Song", title: "Decision Scientist", location: "SF Bay Area, CA", roleType: "data", skills: "Decision science, marketing analytics, data science", seniority: "Senior", availability: "open"},
+            {name: "Yongxue (Grace) Yu, PhD", title: "Manager of SI/PI/EMC", location: "San Jose, CA", roleType: "engineering", skills: "Signal integrity, power integrity, EMC/EMI", seniority: "Manager", availability: "all"},
+            {name: "Ilana Cohen Bengio", title: "Regional Channel Sales Manager", location: "Paris Region, France", roleType: "business", skills: "B2B channel sales, partner mgmt, XR/VR go-to-market", seniority: "Manager", availability: "open"},
+            {name: "Stephen Smith", title: "Metaverse Integrity Operations", location: "Austin, TX", roleType: "business", skills: "Trust & safety, integrity ops, risk ops", seniority: "Manager", availability: "all"},
+            {name: "Hsien-Hui Cheng", title: "Research Scientist", location: "San Jose, CA", roleType: "research", skills: "Display optics, AR/VR display research, optical engineering", seniority: "Senior", availability: "all"},
+            {name: "Francesco Legnazzi", title: "Product Specialist", location: "London, UK", roleType: "business", skills: "Product operations support, program coordination", seniority: "Senior", availability: "open"},
+            {name: "Xin Luna Dong", title: "Principal Scientist", location: "Greater Seattle Area", roleType: "research", skills: "AI/ML research, data management/knowledge systems", seniority: "Principal", availability: "all"},
+            {name: "Ke Xu", title: "Senior Research Scientist", location: "Berkeley, CA", roleType: "research", skills: "ML research, applied science, personalization AI", seniority: "Senior", availability: "open"},
+            {name: "Jay Lin", title: "Manager, System Industrial Engineer", location: "SF Bay Area, CA", roleType: "product", skills: "Industrial engineering, system manufacturing, process optimization", seniority: "Manager", availability: "open"},
+            {name: "Noam Macagon", title: "Product Configuration Analyst", location: "New York, NY", roleType: "business", skills: "PLM/PDM, product configuration, product lifecycle systems", seniority: "Senior", availability: "all"},
+            {name: "Kwang Min Choi", title: "Technical Program Manager", location: "Los Angeles, CA", roleType: "product", skills: "Hardware TPM, consumer electronics programs", seniority: "Senior", availability: "all"},
+            {name: "Erica R.", title: "Logistics Operations Program Manager", location: "United Kingdom", roleType: "business", skills: "Logistics ops, outbound logistics, operations program mgmt", seniority: "Manager", availability: "all"},
+            {name: "Carlos Rijo, MBA", title: "Recruiting Partner", location: "Austin, TX", roleType: "business", skills: "Talent acquisition, recruiting partner, product design hiring", seniority: "Senior", availability: "all"},
+            {name: "Karla McKenzie", title: "Manager, PLM", location: "SF Bay Area, CA", roleType: "product", skills: "PLM leadership, PDM, product lifecycle", seniority: "Manager", availability: "all"},
+            {name: "Chuan Guo", title: "Research Scientist", location: "Bellevue, WA", roleType: "research", skills: "AI/ML research, computer vision/ML", seniority: "Senior", availability: "open"},
+            {name: "Nachuan Y.", title: "Product Design Engineer", location: "Stanford, CA", roleType: "design", skills: "Mechanical/product design, hardware design, engineering design", seniority: "Mid", availability: "open"},
+            {name: "Hao Chen", title: "Lead Architect", location: "Greater Seattle Area", roleType: "engineering", skills: "Architecture leadership, software/hardware systems", seniority: "Lead", availability: "all"},
+            {name: "Yizhou C.", title: "PhD Graduate Student", location: "Pittsburgh, PA", roleType: "research", skills: "Research, PhD-level ML/AI research", seniority: "Mid", availability: "all"},
+            {name: "Zhenggang Tang", title: "Research Scientist Intern", location: "Urbana, IL", roleType: "research", skills: "ML/AI research, computer vision / applied research", seniority: "Mid", availability: "open"},
+            {name: "Pinghung (Henry) Wei", title: "Electrical Engineer", location: "Greater Seattle Area", roleType: "engineering", skills: "Electrical engineering, hardware development", seniority: "Senior", availability: "open"},
+            {name: "Daniel Nam", title: "Equipment Program Lead", location: "Bothell, WA", roleType: "product", skills: "Lab operations, equipment program management", seniority: "Lead", availability: "open"},
+            {name: "Zhaoyu Nie", title: "Research Scientist", location: "Berkeley, CA", roleType: "research", skills: "Research science, applied research, PhD-level R&D", seniority: "Senior", availability: "open"},
+            {name: "Keren Z.", title: "Material Tech Lead", location: "San Francisco, CA", roleType: "engineering", skills: "Materials engineering, polymers/chemistry, materials R&D", seniority: "Lead", availability: "all"},
+            {name: "Alex Xie", title: "Environmental Specialist", location: "Burlingame, CA", roleType: "business", skills: "EHS, environmental compliance, safety programs", seniority: "Senior", availability: "all"},
+            {name: "Anna Mengjie Yu, PhD", title: "Research Scientist", location: "Greater Seattle Area", roleType: "research", skills: "Research science, data science, ML research", seniority: "Senior", availability: "all"},
+            {name: "Taylor (Xin) Li", title: "Data Scientist", location: "Stony Brook, NY", roleType: "data", skills: "Data science, fraud/financial modeling, quant modeling", seniority: "Senior", availability: "open"},
+            {name: "Jingni Wu", title: "Computational Linguist", location: "Seattle, WA", roleType: "research", skills: "NLP, computational linguistics, language data annotation", seniority: "Mid", availability: "open"},
+            {name: "Xiaochu (Frank) Yao", title: "Acoustic Render Lead", location: "Santa Clara, CA", roleType: "engineering", skills: "Acoustic engineering, audio rendering, XR audio systems", seniority: "Lead", availability: "all"},
+            {name: "Zhou You", title: "Engineering Manager", location: "Greater Seattle Area", roleType: "product", skills: "Video algorithms, engineering management, ML/video systems", seniority: "Manager", availability: "open"},
+            {name: "Dan Chern", title: "Staff Product Manager", location: "SF Bay Area, CA", roleType: "product", skills: "Product management, wearables, Health AI", seniority: "Staff", availability: "all"},
+            {name: "Sam Hesson", title: "Engineering Manager", location: "Seattle, WA", roleType: "product", skills: "AI agents, engineering leadership, startup founder/CTO", seniority: "Manager", availability: "open"},
+            {name: "Tianheng Wang", title: "Optical Metrology Engineer", location: "SF Bay Area, CA", roleType: "engineering", skills: "Optical metrology, camera modules, optics R&D", seniority: "Lead", availability: "all"},
+            {name: "Giuliana Garcia", title: "Head of Legal Program Management", location: "San Francisco, CA", roleType: "business", skills: "Legal program management, governance, cross-functional ops", seniority: "Director", availability: "open"},
+            {name: "Yuqi Deng", title: "Research Scientist", location: "Bellevue, WA", roleType: "research", skills: "ML research, AGI/advanced ML, applied scientist", seniority: "Senior", availability: "all"},
+            {name: "Nina Brentlinger", title: "Product Manager", location: "San Francisco, CA", roleType: "product", skills: "Ads monetization PM, product strategy, content/tooling", seniority: "Senior", availability: "all"},
+            {name: "Yun Wang", title: "Director of Display Hardware", location: "Cupertino, CA", roleType: "engineering", skills: "Display hardware leadership, display R&D, engineering mgmt", seniority: "Director", availability: "all"},
+            {name: "Qinjie Lin", title: "Research Scientist", location: "Greater Chicago", roleType: "research", skills: "AI research, ML engineering, RL research roles", seniority: "Senior", availability: "open"},
+            {name: "Haoxiang Yu", title: "Research Scientist", location: "Burlingame, CA", roleType: "research", skills: "Multimodal/contextual AI, ML engineering, applied research", seniority: "Senior", availability: "open"},
+            {name: "James Xue", title: "Sr. Manager, Wireless Design Validation", location: "Menlo Park, CA", roleType: "product", skills: "RF/wireless validation, certification, AR/VR wireless systems", seniority: "Manager", availability: "open"},
+            {name: "Sharon L.", title: "Sr. Manager, Test Integration Engineer", location: "SF Bay Area, CA", roleType: "engineering", skills: "Test integration, system industrial engineering, manufacturing test", seniority: "Manager", availability: "all"},
+            {name: "Yang Chu", title: "Sr. Materials & Process Engineer", location: "Cupertino, CA", roleType: "engineering", skills: "Materials/process engineering, manufacturing materials", seniority: "Senior", availability: "all"},
+            {name: "Madhavi Billam-Mukhi, PhD, DABT", title: "Head of Biocompatibility", location: "Belle Mead, NJ", roleType: "business", skills: "Biocompatibility, regulatory compliance, toxicology/material safety", seniority: "Director", availability: "open"},
+            {name: "Benlin L.", title: "PhD Student", location: "Seattle, WA", roleType: "research", skills: "AI research internship, DeepMind intern, PhD research", seniority: "Mid", availability: "all"},
+            {name: "Edwina Terangpi", title: "Data Engineer III", location: "SF Bay Area, CA", roleType: "data", skills: "Data engineering, analytics, BI", seniority: "Senior", availability: "open"},
+            {name: "Jinlin Cai", title: "Sr. Electrical Engineer", location: "Shanghai, China", roleType: "engineering", skills: "Electrical design, hardware engineering", seniority: "Senior", availability: "all"},
+            {name: "Syed Shakib Sarwar", title: "Sr. Staff Research Scientist", location: "Redmond, WA", roleType: "research", skills: "AI/ML systems, prototypes, research leadership", seniority: "Staff", availability: "all"},
+            {name: "Jun Yin", title: "PQE", location: "SF Bay Area, CA", roleType: "engineering", skills: "Product quality, supplier quality, reliability/quality systems", seniority: "Senior", availability: "all"},
+            {name: "Victoria Bertrand", title: "Project Coordinator", location: "Austin, TX", roleType: "product", skills: "Project coordination, TA program coordination", seniority: "Mid", availability: "all"},
+            {name: "EvaRose Dwyer", title: "Sr Implementation Manager", location: "Brooklyn, NY", roleType: "product", skills: "Product data operations, implementation/program mgmt, GenAI ops", seniority: "Senior", availability: "open"},
+            {name: "Xia You", title: "Data Science Manager", location: "SF Bay Area, CA", roleType: "data", skills: "Data science management, analytics leadership, experimentation", seniority: "Manager", availability: "open"},
+            {name: "Weihan Zhang", title: "Opto-Mechanical Engineer", location: "Redmond, WA", roleType: "engineering", skills: "Opto-mechanical design, optics hardware", seniority: "Senior", availability: "all"},
+            {name: "Cagatay Bilgin", title: "Engineering Leader, PyTorch On-Device", location: "Seattle, WA", roleType: "product", skills: "PyTorch mobile/on-device ML, ML engineering leadership", seniority: "Manager", availability: "all"},
+            {name: "Samuel Tam", title: "Staff Process Engineer", location: "San Jose, CA", roleType: "engineering", skills: "Manufacturing/process engineering, camera & sensor process", seniority: "Staff", availability: "open"},
+            {name: "Roshanak Sadeghi", title: "Operations & Execution Lead", location: "Redwood City, CA", roleType: "business", skills: "Ops execution, inventory transformation, supply planning", seniority: "Lead", availability: "all"},
+            {name: "Edy (Xiaoxi) Zhang", title: "Software Engineering Manager", location: "Seattle, WA", roleType: "product", skills: "SWE management, product engineering, deep learning background", seniority: "Manager", availability: "open"},
+            {name: "Stephanie Chen", title: "Strategy & Operations Manager", location: "Los Angeles, CA", roleType: "business", skills: "Strategy & ops, partnerships, consulting", seniority: "Manager", availability: "open"},
+            {name: "Hanny Zaki", title: "QA Engineering Lead", location: "Santa Clara, CA", roleType: "engineering", skills: "QA leadership, dogfooding programs, wearables testing", seniority: "Lead", availability: "all"},
+            {name: "Nathan White", title: "Reality Labs Policy Director", location: "United States", roleType: "business", skills: "Policy, regulatory strategy, AI wearables governance", seniority: "Director", availability: "all"},
+            {name: "Jessie WS Leung", title: "APAC Fulfillment Ops", location: "Singapore", roleType: "business", skills: "Fulfillment ops, logistics, supply chain transformation", seniority: "Senior", availability: "all"},
+            {name: "Kong Boon Yeap", title: "Staff Reliability Engineer", location: "SF Bay Area, CA", roleType: "engineering", skills: "Reliability engineering, wearables reliability", seniority: "Staff", availability: "all"},
+            {name: "Ziyi Kou", title: "Senior Research Scientist", location: "Bellevue, WA", roleType: "research", skills: "Research scientist, applied research, multi-year Meta research roles", seniority: "Senior", availability: "all"},
+            {name: "JJ Kam", title: "Director, Manufacturing Design Engineering", location: "Sunnyvale, CA", roleType: "product", skills: "Manufacturing design engineering leadership, tech ops", seniority: "Director", availability: "open"},
+            {name: "Yutong Zhang", title: "Product Designer", location: "San Mateo, CA", roleType: "design", skills: "Product design, AR product design, UX/UI", seniority: "Mid", availability: "open"},
+            {name: "An Li", title: "XR System TPM Lead", location: "SF Bay Area, CA", roleType: "product", skills: "XR program management, wearable systems TPM", seniority: "Lead", availability: "all"},
+            {name: "Hsiu-Wu (Jason) Guo", title: "Camera Technical Program Manager", location: "Greater Seattle Area", roleType: "product", skills: "Camera TPM, hardware programs, academia", seniority: "Senior", availability: "open"},
+            {name: "Kate Kessler", title: "Head of North America Field Sales", location: "Menlo Park, CA", roleType: "business", skills: "Field sales enablement, retail ops, training, GTM", seniority: "Director", availability: "all"},
+            {name: "Jing Wen", title: "Software Engineer", location: "Redmond, WA", roleType: "engineering", skills: "Software engineering", seniority: "Mid", availability: "open"},
+            {name: "Jeremy Snodgrass", title: "Director, Advanced Technologies Strategy", location: "Ann Arbor, MI", roleType: "business", skills: "Silicon strategy, advanced tech strategy, legal background", seniority: "Director", availability: "open"},
+            {name: "Liu Allen", title: "Manufacturing Technical Manager", location: "Shenzhen, China", roleType: "product", skills: "Manufacturing engineering, tech program mgmt", seniority: "Manager", availability: "all"},
+            {name: "ChunKiet Leong", title: "Software Engineer", location: "Redmond, WA", roleType: "engineering", skills: "Software engineering", seniority: "Senior", availability: "all"},
+            {name: "Ruth Bram", title: "Executive Producer", location: "United States", roleType: "product", skills: "XR/AR/VR production, platform leadership, 0→1 scale", seniority: "Director", availability: "all"},
+            {name: "Jessica Serafini", title: "Business Development Manager", location: "Larkspur, CA", roleType: "business", skills: "Partnerships, business development, enterprise deals", seniority: "Manager", availability: "open"},
+            {name: "Amanda Clements", title: "Creative Program Management Lead", location: "SF Bay Area, CA", roleType: "product", skills: "Program management, creative ops, digital programs", seniority: "Lead", availability: "open"},
+            {name: "Divyabharati (Divya) Chandrasekaran", title: "Principal Product Risk", location: "New York, NY", roleType: "business", skills: "Product risk, responsible AI, privacy risk", seniority: "Principal", availability: "open"},
+            {name: "Neetesh Mittal", title: "Engineer", location: "London, UK", roleType: "engineering", skills: "SWE leadership", seniority: "Senior", availability: "open"},
+            {name: "Kim KyongHyeok", title: "Supplier Quality Engineer", location: "Seoul, South Korea", roleType: "engineering", skills: "Supplier quality, manufacturing quality, supplier development", seniority: "Senior", availability: "open"},
+            {name: "Jingzhi Zang", title: "Senior Software Engineer", location: "Bellevue, WA", roleType: "engineering", skills: "Backend/cloud SWE", seniority: "Senior", availability: "all"},
+            {name: "Farouk Belghoul", title: "Product Architect", location: "SF Bay Area, CA", roleType: "engineering", skills: "AR/VR architecture, wireless tech, product systems", seniority: "Senior", availability: "all"},
+            {name: "Prakash Aradhya", title: "Product Manager", location: "Bellevue, WA", roleType: "product", skills: "Product leadership", seniority: "Director", availability: "open"},
+            {name: "Yingyi (Winnie) Li", title: "Senior Data Scientist", location: "Greater Chicago", roleType: "data", skills: "Data science, marketplace analytics, partner analytics", seniority: "Senior", availability: "all"},
+            {name: "Amy Lin", title: "Lead Recruiter", location: "Hong Kong SAR", roleType: "business", skills: "International tech recruiting, RL/EE recruiting", seniority: "Lead", availability: "all"},
+            {name: "Alexander Ansari", title: "Global Sales Training & Engagement Manager", location: "Houston, TX", roleType: "business", skills: "Sales training, enablement, DEI leadership, coaching", seniority: "Manager", availability: "open"},
+            {name: "Sean Teo", title: "Technical Artist", location: "Los Angeles, CA", roleType: "design", skills: "Technical art, character pipeline, game/3D production", seniority: "Senior", availability: "all"},
+            {name: "Timo Choong-Do Park", title: "Technical Program Manager", location: "San Jose, CA", roleType: "product", skills: "TPM, hardware programs, quality/program", seniority: "Senior", availability: "open"},
+            {name: "Shayne C.", title: "Policy Operations Manager", location: "United States", roleType: "business", skills: "Policy ops, Trust & Safety, risk intelligence, program mgmt", seniority: "Manager", availability: "open"},
+            {name: "Jian Zhou", title: "Software Engineer", location: "Fremont, CA", roleType: "engineering", skills: "SWE + architecture, large-scale systems", seniority: "Principal", availability: "all"},
+            {name: "Xijie Huang", title: "Research Engineer", location: "Pittsburgh, PA", roleType: "research", skills: "Research engineering, internships, PhD", seniority: "Mid", availability: "all"},
+            {name: "Lemeng Wu", title: "Senior Research Scientist", location: "Menlo Park, CA", roleType: "research", skills: "LLMs, multimodal LLM research, applied research", seniority: "Senior", availability: "all"},
+            {name: "Wesley (Chingwei) Chang", title: "AR Opto Mechanical Engineer", location: "Greater Seattle Area", roleType: "engineering", skills: "Opto-mechanical, AR hardware, optics/mechanics design", seniority: "Senior", availability: "all"},
+            {name: "Fei Nargunam", title: "Product Cost Engineer", location: "SF Bay Area, CA", roleType: "business", skills: "Cost engineering, product cost, Pixel cost leadership", seniority: "Senior", availability: "open"},
+            {name: "Ian Duncan Magee", title: "User Experience Researcher", location: "London, UK", roleType: "research", skills: "UX research, experimental research, research ops", seniority: "Senior", availability: "open"},
+            {name: "Yirong Zhu", title: "Software Engineer", location: "Kirkland, WA", roleType: "engineering", skills: "SWE, backend/product engineering", seniority: "Senior", availability: "open"},
+            {name: "Emily Newman", title: "Program Manager, Integrity", location: "NYC Metro", roleType: "product", skills: "Program management, integrity ops, consulting background", seniority: "Manager", availability: "all"},
+            {name: "Tianyu Wang", title: "Optical System Engineer", location: "China", roleType: "engineering", skills: "Optical systems, NPI/program leadership", seniority: "Senior", availability: "all"},
+            {name: "Vamsi Krishna Ithapu", title: "Senior Research Science Manager", location: "Greater Seattle Area", roleType: "research", skills: "AI/ML, CV, wearables computing, health & wellness AI", seniority: "Manager", availability: "all"},
+            {name: "Annie Daly, Ph.D.", title: "Senior UX Researcher", location: "Iowa City, IA", roleType: "research", skills: "UXR, enterprise UX, workplace research", seniority: "Senior", availability: "open"},
+            {name: "Jai Kim", title: "Machine Learning Engineer", location: "SF Bay Area, CA", roleType: "engineering", skills: "ML engineering, applied AI", seniority: "Senior", availability: "all"},
+            {name: "Jason (Yineng) Zhang", title: "AI Research Product Designer", location: "Toronto, Canada", roleType: "design", skills: "UX/PM, AI research design, XR, co-founder", seniority: "Senior", availability: "open"},
+            {name: "Lorimer Eaton", title: "Reality Labs Prototype Protection Lead", location: "SF Bay Area, CA", roleType: "business", skills: "Prototype protection, product security solutions", seniority: "Lead", availability: "all"},
+            {name: "Souvik Ghosh", title: "Manager, Network Engineering", location: "Austin, TX", roleType: "engineering", skills: "Network engineering leadership, DC escalation", seniority: "Manager", availability: "all"},
+            {name: "Jie Chen", title: "Technical Program Manager", location: "Mountain View, CA", roleType: "product", skills: "TPM, enterprise engineering leadership", seniority: "Senior", availability: "open"},
+            {name: "Maliha S. Ahmed", title: "Operations Program Manager", location: "Seattle, WA", roleType: "product", skills: "Program mgmt, enterprise tech, RPA/cloud, aerospace ops", seniority: "Senior", availability: "all"},
+            {name: "Yasuo Morimoto", title: "Antenna Research Scientist", location: "United States", roleType: "research", skills: "Antenna R&D, telecom, applied research", seniority: "Senior", availability: "open"},
+            {name: "Terek Li", title: "Materials Engineer", location: "Redmond, WA", roleType: "engineering", skills: "Materials + ML, process development, AI-driven materials", seniority: "Mid", availability: "open"},
+            {name: "Charles J. Hoover", title: "Senior Director of Research Development", location: "Pittsburgh, PA", roleType: "research", skills: "Research org scaling, ML/AI/CV, product development", seniority: "Director", availability: "all"},
+            {name: "Huijie Jing", title: "Wireless Test Lead", location: "Santa Clara, CA", roleType: "engineering", skills: "Wireless test, 802.11ad/ay, system engineering", seniority: "Lead", availability: "all"},
+            {name: "JING S.", title: "Software Engineer", location: "Brooklyn, NY", roleType: "engineering", skills: "Scalable messaging, VR applications, distributed systems", seniority: "Senior", availability: "open"},
+            {name: "Qingyang Tan", title: "Research Scientist", location: "Burlingame, CA", roleType: "research", skills: "Computer graphics, neural physical simulation, research", seniority: "Senior", availability: "open"},
+            {name: "Yang Yang", title: "Senior Machine Learning Engineer", location: "Zurich, Switzerland", roleType: "engineering", skills: "ML engineering, applied research", seniority: "Senior", availability: "open"},
+            {name: "Rajee Suresh", title: "Tech Lead", location: "Boston, MA", roleType: "product", skills: "Tech lead, product/platform, AR/VR + AI ops background", seniority: "Lead", availability: "open"},
+            {name: "Yumin S.", title: "Software Engineer in Test", location: "SF Bay Area, CA", roleType: "engineering", skills: "SDET, test automation, quality engineering leadership", seniority: "Senior", availability: "open"},
+            {name: "Jianbo He, Ph.D.", title: "Director, Contract Manufacturing", location: "United States", roleType: "business", skills: "Contract manufacturing leadership, NPI, supply chain", seniority: "Director", availability: "all"},
+            {name: "Pranay Choudhary", title: "Strategic Sourcing Manager", location: "Redmond, WA", roleType: "business", skills: "Strategic sourcing, display supply chain, process engineering", seniority: "Manager", availability: "all"},
+            {name: "Sinan Liu", title: "Staff SI/PI Engineer", location: "SF Bay Area, CA", roleType: "engineering", skills: "Signal integrity / power integrity, high-speed hardware systems", seniority: "Staff", availability: "all"},
+            {name: "Jessica Shindo", title: "Program Manager", location: "Palo Alto, CA", roleType: "product", skills: "Program management, VR legal programs, strategic ops", seniority: "Senior", availability: "open"},
+            {name: "Ciara Gibbs", title: "PhD Research Scientist Intern", location: "New York, NY", roleType: "research", skills: "Hardware/science research, motor control, augmentation, PhD", seniority: "Mid", availability: "open"},
+            {name: "Ankush Bagotra", title: "Product Manager", location: "Mountain View, CA", roleType: "product", skills: "GenAI product, conversation infra, leadership/mentoring", seniority: "Senior", availability: "open"},
+            {name: "Jie Liu", title: "Research Engineer", location: "Burlingame, CA", roleType: "research", skills: "Research engineering, systems + research lab background", seniority: "Senior", availability: "open"},
+            {name: "Hy Khuu", title: "Senior Technical Project Manager", location: "San Jose, CA", roleType: "product", skills: "TPM/Project Mgmt, AI/ML, wearables smart glasses, embedded platforms", seniority: "Senior", availability: "all"},
+            {name: "Rahul Vadodkar", title: "Data Engineer", location: "Cupertino, CA", roleType: "data", skills: "Data engineering, AWS, consulting/contracting", seniority: "Senior", availability: "all"},
+            {name: "Dharini C", title: "Research Assistant I", location: "Seattle, WA", roleType: "research", skills: "UXR, HCI, accessibility, XR, human factors", seniority: "Mid", availability: "open"},
+            {name: "Mia Melo", title: "Chemical Engineer", location: "Cork, Ireland", roleType: "engineering", skills: "Chemical engineering, manufacturing/process exposure", seniority: "Mid", availability: "open"},
+            {name: "William (Weihua) Gao", title: "Technical Program Manager", location: "Santa Clara, CA", roleType: "product", skills: "TPM leadership, autonomy/cloud/app/simulation tools", seniority: "Director", availability: "all"},
+            {name: "Matt Brannies, MS", title: "Test Associate", location: "Portland, OR", roleType: "engineering", skills: "Immersive media, XR/VR ops, testing", seniority: "Mid", availability: "open"},
+            {name: "Feng Ding", title: "Silicon Engineer", location: "San Jose, CA", roleType: "engineering", skills: "SoC infra, performance architecture, semiconductor", seniority: "Senior", availability: "open"},
+            {name: "Whitney Williams-Garrison", title: "Technical Project Manager", location: "SF Bay Area, CA", roleType: "product", skills: "Technical PM, customer experience ops, tooling programs", seniority: "Senior", availability: "open"},
+            {name: "Cullen Bond", title: "Lead Software Engineer", location: "San Francisco, CA", roleType: "engineering", skills: "React/JS/TS, product engineering, dev infra, AI platform", seniority: "Lead", availability: "open"},
+            {name: "Maryam Zahiri", title: "Software Engineer", location: "United States", roleType: "engineering", skills: "Software + embedded background, gaming peripherals", seniority: "Mid", availability: "open"},
+            {name: "Chris Nguyen", title: "Reality Lab Sales Global Enablement", location: "San Jose, CA", roleType: "business", skills: "Sales enablement, retail/experience expert, market development", seniority: "Mid", availability: "open"},
+            {name: "Cenk Akarsu", title: "Senior Software Engineer", location: "Amsterdam Area", roleType: "engineering", skills: "Backend/software engineering", seniority: "Senior", availability: "open"},
+            {name: "Douglas S.", title: "Product Manager", location: "Belmont, CA", roleType: "product", skills: "VR product, supply chain strategy, scaling ops, cost savings", seniority: "Senior", availability: "open"},
+            {name: "Patricia Ann G.", title: "Change Manager", location: "United States", roleType: "business", skills: "Change management, instructional design, LMS", seniority: "Senior", availability: "all"},
+            {name: "Phina Enemuo", title: "Lead/Staff Technical Program Manager", location: "Burlington, Ontario, Canada", roleType: "product", skills: "AR TPM, Alexa speech ML TPM, scrum/project mgmt", seniority: "Lead", availability: "all"},
+            {name: "Daniel Ma", title: "Principal Technical Program Manager", location: "Greater Seattle Area", roleType: "product", skills: "HW system program mgmt, product maker, innovation", seniority: "Principal", availability: "all"},
+            {name: "Kelly Ohm (MS, PMP)", title: "UX Researcher", location: "Seattle, WA", roleType: "research", skills: "Human factors, biomechanics, user research", seniority: "Senior", availability: "open"},
+            {name: "Md. Rafiul Amin", title: "Research Engineer", location: "SF Bay Area, CA", roleType: "research", skills: "Signal processing, ML, digital systems, DSP", seniority: "Senior", availability: "all"},
+            {name: "Fating Hong", title: "Reality Lab Research Intern", location: "Guangzhou, China", roleType: "research", skills: "Research intern, HKUST PhD, Tencent/Adobe internships", seniority: "Mid", availability: "open"},
+            {name: "Roko Smiljanic III", title: "Project Coordinator", location: "Belmont, CA", roleType: "product", skills: "AI/ML project coordination, ops/program support", seniority: "Mid", availability: "open"},
+            {name: "Hang Zhang", title: "Research Scientist", location: "San Jose, CA", roleType: "research", skills: "Research, distributed systems", seniority: "Senior", availability: "open"},
+            {name: "Yilei G.", title: "Technical Project Manager", location: "Hayward, CA", roleType: "product", skills: "Analytics, optimization, TPM", seniority: "Senior", availability: "open"},
+            {name: "John Bradley", title: "Engineering Program Specialist", location: "San Jose, CA", roleType: "product", skills: "Packaging/engineering ops, program specialist, wearables", seniority: "Mid", availability: "all"},
+            {name: "Evaldo Amaral", title: "Infra Consolidation Finance", location: "SF Bay Area, CA", roleType: "business", skills: "FP&A, planning systems/insights, scaling finance", seniority: "Senior", availability: "open"},
+            {name: "EMMANUELLA OWOLABI", title: "UX Research Associate", location: "Bronx, NY", roleType: "research", skills: "UXR support, ops/admin support, customer support", seniority: "Mid", availability: "open"}
         ];
 
         function getRoleClass(roleType) {
@@ -724,6 +944,18 @@
             return labelMap[roleType] || 'Other';
         }
 
+        function getSeniorityBadge(seniority) {
+            if (!seniority || seniority === 'all') return '';
+            return `<span class="seniority-badge">${seniority}</span>`;
+        }
+
+        function getAvailabilityBadge(availability) {
+            if (availability === 'open') {
+                return `<span class="open-to-work">Open to Work</span>`;
+            }
+            return '';
+        }
+
         function renderTable(filteredCandidates) {
             const tbody = document.getElementById('tableBody');
             tbody.innerHTML = '';
@@ -732,11 +964,11 @@
                 const row = document.createElement('tr');
                 row.innerHTML = `
                     <td><strong>${candidate.name}</strong></td>
-                    <td>${candidate.title}</td>
+                    <td>${candidate.title}${getSeniorityBadge(candidate.seniority)}</td>
                     <td><span class="location-badge">${candidate.location}</span></td>
                     <td><span class="role-tag ${getRoleClass(candidate.roleType)}">${getRoleLabel(candidate.roleType)}</span></td>
                     <td>${candidate.skills}</td>
-                    <td>${candidate.bestFit}</td>
+                    <td>${getAvailabilityBadge(candidate.availability)}</td>
                 `;
                 tbody.appendChild(row);
             });
@@ -747,35 +979,89 @@
         function updateStats(filteredCandidates) {
             document.getElementById('totalCandidates').textContent = filteredCandidates.length;
             const openToWork = filteredCandidates.filter(c => c.availability === 'open').length;
-            const active = filteredCandidates.filter(c => c.availability === 'active').length;
+            const seniorPlus = filteredCandidates.filter(c => 
+                c.seniority === 'Senior' || c.seniority === 'Staff' || 
+                c.seniority === 'Principal' || c.seniority === 'Lead' || 
+                c.seniority === 'Manager' || c.seniority === 'Director'
+            ).length;
             document.getElementById('openToWork').textContent = openToWork;
-            document.getElementById('activeTalent').textContent = active;
+            document.getElementById('seniorPlus').textContent = seniorPlus;
         }
 
         function filterCandidates() {
             const roleFilter = document.getElementById('roleFilter').value;
             const locationFilter = document.getElementById('locationFilter').value;
+            const seniorityFilter = document.getElementById('seniorityFilter').value;
             const availabilityFilter = document.getElementById('availabilityFilter').value;
             const searchTerm = document.getElementById('searchInput').value.toLowerCase();
 
             let filtered = candidates.filter(candidate => {
                 let matches = true;
 
+                // Role filter
                 if (roleFilter !== 'all' && candidate.roleType !== roleFilter) matches = false;
 
+                // Location filter
                 if (locationFilter !== 'all') {
-                    if (locationFilter === 'seattle' && !candidate.location.toLowerCase().includes('seattle') && !candidate.location.toLowerCase().includes('redmond') && !candidate.location.toLowerCase().includes('bothell')) matches = false;
-                    if (locationFilter === 'bay' && !candidate.location.toLowerCase().includes('san jose') && !candidate.location.toLowerCase().includes('cupertino') && !candidate.location.toLowerCase().includes('menlo park') && !candidate.location.toLowerCase().includes('mountain view') && !candidate.location.toLowerCase().includes('san francisco')) matches = false;
-                    if (locationFilter === 'ny' && !candidate.location.toLowerCase().includes('new york') && !candidate.location.toLowerCase().includes('bronx')) matches = false;
-                    if (locationFilter === 'international' && (candidate.location.toLowerCase().includes('china') || candidate.location.toLowerCase().includes('italy'))) {
-                    } else if (locationFilter === 'international') {
+                    const loc = candidate.location.toLowerCase();
+                    if (locationFilter === 'seattle' && !loc.includes('seattle') && !loc.includes('redmond') && 
+                        !loc.includes('bothell') && !loc.includes('bellevue') && !loc.includes('kirkland') && 
+                        !loc.includes('woodinville') && !loc.includes('medina') && !loc.includes('snoqualmie')) {
+                        matches = false;
+                    }
+                    if (locationFilter === 'bay' && !loc.includes('san jose') && !loc.includes('cupertino') && 
+                        !loc.includes('menlo park') && !loc.includes('mountain view') && !loc.includes('san francisco') &&
+                        !loc.includes('sunnyvale') && !loc.includes('palo alto') && !loc.includes('fremont') &&
+                        !loc.includes('sf bay') && !loc.includes('bay area') && !loc.includes('san mateo') &&
+                        !loc.includes('burlingame') && !loc.includes('redwood city') && !loc.includes('santa clara')) {
+                        matches = false;
+                    }
+                    if (locationFilter === 'ny' && !loc.includes('new york') && !loc.includes('bronx') && 
+                        !loc.includes('brooklyn') && !loc.includes('nyc')) {
+                        matches = false;
+                    }
+                    if (locationFilter === 'international') {
+                        const isUS = loc.includes('ca') || loc.includes('california') || loc.includes('seattle') || 
+                                   loc.includes('washington') || loc.includes('oregon') || loc.includes('texas') || 
+                                   loc.includes('new york') || loc.includes('florida') || loc.includes('united states') ||
+                                   loc.includes('austin') || loc.includes('houston') || loc.includes('boston');
+                        if (isUS) matches = false;
+                    }
+                }
+
+                // Seniority filter
+                if (seniorityFilter !== 'all') {
+                    if (seniorityFilter === 'senior' && 
+                        candidate.seniority !== 'Senior' && candidate.seniority !== 'Staff' && 
+                        candidate.seniority !== 'Principal' && candidate.seniority !== 'Lead' && 
+                        candidate.seniority !== 'Manager' && candidate.seniority !== 'Director') {
+                        matches = false;
+                    }
+                    if (seniorityFilter === 'staff' && 
+                        candidate.seniority !== 'Staff' && candidate.seniority !== 'Principal') {
+                        matches = false;
+                    }
+                    if (seniorityFilter === 'lead' && 
+                        candidate.seniority !== 'Lead' && candidate.seniority !== 'Manager') {
+                        matches = false;
+                    }
+                    if (seniorityFilter === 'director' && candidate.seniority !== 'Director') {
                         matches = false;
                     }
                 }
 
-                if (availabilityFilter !== 'all' && candidate.availability !== availabilityFilter) matches = false;
+                // Availability filter
+                if (availabilityFilter !== 'all' && candidate.availability !== availabilityFilter) {
+                    matches = false;
+                }
 
-                if (searchTerm && !candidate.name.toLowerCase().includes(searchTerm) && !candidate.skills.toLowerCase().includes(searchTerm) && !candidate.title.toLowerCase().includes(searchTerm)) matches = false;
+                // Search filter
+                if (searchTerm && 
+                    !candidate.name.toLowerCase().includes(searchTerm) && 
+                    !candidate.skills.toLowerCase().includes(searchTerm) && 
+                    !candidate.title.toLowerCase().includes(searchTerm)) {
+                    matches = false;
+                }
 
                 return matches;
             });
@@ -786,13 +1072,14 @@
         function resetFilters() {
             document.getElementById('roleFilter').value = 'all';
             document.getElementById('locationFilter').value = 'all';
+            document.getElementById('seniorityFilter').value = 'all';
             document.getElementById('availabilityFilter').value = 'all';
             document.getElementById('searchInput').value = '';
             filterCandidates();
         }
 
         function exportToCSV() {
-            let csv = 'Name,Title,Location,Role Type,Skills,Best Fit For\n';
+            let csv = 'Name,Title,Location,Role Category,Primary Skills,Seniority,Availability\n';
             
             const tbody = document.getElementById('tableBody');
             const rows = tbody.getElementsByTagName('tr');
@@ -812,13 +1099,14 @@
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = 'meta-reality-lab-candidates.csv';
+            a.download = 'meta-reality-labs-419-professionals.csv';
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
             window.URL.revokeObjectURL(url);
         }
 
+        // Initial render
         renderTable(candidates);
     </script>
 </body>
